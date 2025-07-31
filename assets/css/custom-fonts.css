@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'iranyekan';
+    src: url('../fonts/iranyekanwebregularfanum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* اعمال فونت در کل افزونه با اولویت بالا */
+html body.faktorak-scope,
+html .faktorak-scope,
+html .faktorak-scope *,
+html .faktorak-scope *:before,
+html .faktorak-scope *:after {
+    font-family: 'iranyekan' !important;
+}
+
+/* اعمال فونت در صفحه تنظیمات با انتخاب‌گرهای خاص‌تر */
+html #wpwrap .faktorak-scope,
+html #wpwrap .faktorak-scope *,
+html #wpwrap .faktorak-scope *:before,
+html #wpwrap .faktorak-scope *:after {
+    font-family: 'iranyekan' !important;
+}
+
+/* اعمال فونت در متاباکس با انتخاب‌گرهای خاص‌تر */
+html #wpwrap #shipping_invoice_metabox,
+html #wpwrap #shipping_invoice_metabox *,
+html #wpwrap #shipping_invoice_metabox .button,
+html #wpwrap #shipping_invoice_metabox .button:before,
+html #wpwrap #shipping_invoice_metabox .button:after {
+    font-family: 'iranyekan' !important;
+}
+
+/* اعمال فونت در دکمه‌های حساب کاربری */
+html .shipping-invoice-buttons,
+html .shipping-invoice-buttons *,
+html .shipping-invoice-buttons .button,
+html .shipping-invoice-buttons .button:before,
+html .shipping-invoice-buttons .button:after {
+    font-family: 'iranyekan' !important;
+}
+
+/* اعمال فونت به منوی "فاکتورک" در پیشخوان با انتخاب‌گر دقیق‌تر */
+li#toplevel_page_shipping-invoice-settings .wp-menu-name,
+li#toplevel_page_shipping-invoice-settings .wp-menu-name * {
+    font-family: 'iranyekan' !important;
+}
