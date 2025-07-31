@@ -85,3 +85,5 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == پشتیبانی ==
 برای دریافت پشتیبانی یا گزارش مشکلات، به وب‌سایت رسمی افزونه مراجعه کنید: https://sajjadshadloo.ir/product/factork-plugin/
+
+سلام 
