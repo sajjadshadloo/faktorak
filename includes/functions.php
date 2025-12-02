@@ -198,7 +198,7 @@ function shipping_invoice_display_content() {
             $token    = isset($_GET['faktorak_token']) ? sanitize_text_field(wp_unslash($_GET['faktorak_token'])) : '';
 
             if ( empty($order_id) || empty($token) || ! wp_verify_nonce($token, 'faktorak_inv_' . $order_id) ) {
-                wp_die(__('دسترسی غیرمجاز به فاکتور.', 'Factork'));
+                wp_die(__('دسترسی غیرمجاز به فاکتور.', 'faktorak'));
             }
         }
 
@@ -261,7 +261,7 @@ function faktorak_invoice_button_shortcode($atts) {
     $atts = shortcode_atts(
         array(
             'order_id' => 0,
-            'text'     => __('مشاهده فاکتور', 'Factork'),
+            'text'     => __('مشاهده فاکتور', 'faktorak'),
             'class'    => 'button faktorak-invoice-btn faktorak-btn',
             'icon'     => ''
         ),
@@ -315,7 +315,7 @@ function faktorak_invoice_button_shortcode($atts) {
 function faktorak_proforma_invoice_button_shortcode( $atts ) {
     $atts = shortcode_atts( array(
         'order_id' => 0,
-        'text'     => __( 'صدور پیش‌فاکتور', 'Factork' ),
+        'text'     => __( 'صدور پیش‌فاکتور', 'faktorak' ),
         'class'    => 'button faktorak-proforma-btn faktorak-btn',
     ), $atts, 'faktorak_proforma_button' );
 
@@ -359,7 +359,7 @@ function faktorak_register_proforma_invoice_order_status() {
         'exclude_from_search' => false,
         'show_in_admin_all_list' => true,
         'show_in_admin_status_list' => true,
-        'label_count' => _n_noop('پیش فاکتور <span class="count">(%s)</span>', 'پیش فاکتورها <span class="count">(%s)</span>', 'Factork')
+        'label_count' => _n_noop('پیش فاکتور <span class="count">(%s)</span>', 'پیش فاکتورها <span class="count">(%s)</span>', 'faktorak')
     ));
 }
 
@@ -515,17 +515,17 @@ function faktorak_display_location_in_admin($order){
 function faktorak_add_convert_order_action( $actions ) {
     global $theorder;
     if ( $theorder && $theorder->has_status( 'proforma-invoice' ) ) {
-        $actions['faktorak_convert_to_payable'] = __( 'تبدیل به سفارش قابل پرداخت', 'Factork' );
+        $actions['faktorak_convert_to_payable'] = __( 'تبدیل به سفارش قابل پرداخت', 'faktorak' );
     }
     return $actions;
 }
 add_filter( 'woocommerce_order_actions', 'faktorak_add_convert_order_action' );
 
 function faktorak_process_convert_order_action( $order ) {
-    $order->update_status( 'pending', __( 'پیش فاکتور توسط مدیر به سفارش قابل پرداخت تبدیل شد.', 'Factork' ) );
+    $order->update_status( 'pending', __( 'پیش فاکتور توسط مدیر به سفارش قابل پرداخت تبدیل شد.', 'faktorak' ) );
     WC()->payment_gateways();
     WC()->shipping();
     WC()->mailer()->customer_invoice( $order );
-    $order->add_order_note( __( 'ایمیل فاکتور به همراه لینک پرداخت برای مشتری ارسال شد.', 'Factork' ) );
+    $order->add_order_note( __( 'ایمیل فاکتور به همراه لینک پرداخت برای مشتری ارسال شد.', 'faktorak' ) );
 }
 add_action( 'woocommerce_order_action_faktorak_convert_to_payable', 'faktorak_process_convert_order_action' );

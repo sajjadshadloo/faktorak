@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 $order_id = isset($_GET['order_id']) ? absint($_GET['order_id']) : 0;
 $order    = $order_id ? wc_get_order($order_id) : null;
 if ( ! $order ) {
-    wp_die( esc_html__('سفارش پیدا نشد.', 'Factork') );
+    wp_die( esc_html__('سفارش پیدا نشد.', 'faktorak') );
 }
 
 $settings = new ShippingInvoiceSettings();

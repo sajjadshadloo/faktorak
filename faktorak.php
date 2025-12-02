@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: faktorak (فاکتورک) - سجاد شادلو
-Plugin URI: https://sajjadshadloo.ir/product/factork-plugin/
+Plugin Name: فاکتورک (Factorak)
+Plugin URI: https://sajjadshadloo.ir/product/faktorak-plugin/
 Description: افزونه فاکتور و برچسب پستی برای فروشگاه‌های ووکامرسی - این افزونه امکانات چاپ فاکتور، برچسب پستی و مدیریت سفارشات را فراهم می‌کند.
 Version: 1.3.1
 Author: سجاد شادلو
@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: faktorak
 Domain Path: /languages
 Requires at least: 5.0
-Tested up to: 6.6
+Tested up to: 6.8
 WC requires at least: 3.0
 WC Tested up to: 9.0
 Tags: invoice, shipping label, woocommerce, invoice printing, label printing
@@ -21,15 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 // تعریف مسیر افزونه
 define( 'FAKTORAK_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-
-// ✅ لود ترجمه‌ها روی init (برای جلوگیری از JIT notice)
-add_action('init', function () {
-    load_plugin_textdomain(
-        'faktorak',
-        false,
-        dirname(plugin_basename(__FILE__)) . '/languages'
-    );
-});
 
 // فراخوانی فایل‌های مورد نیاز
 require_once FAKTORAK_PLUGIN_DIR . 'includes/class-shipping-invoice-settings.php';

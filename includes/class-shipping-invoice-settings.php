@@ -123,7 +123,7 @@ class ShippingInvoiceSettings {
             <!-- کارت: شورت‌کدهای ساده + کپی -->
             <div class="fak-card" style="max-width:980px">
                 <h2 style="margin-top:0">شورت‌کدهای آماده</h2>
-                <p style="color:#555;margin:0 0 16px">همین دو شورت‌کد را کپی کنید</p>
+                <p style="color:#555;margin:0 0 16px">همین دو شورت‌کد را کپی کنید </p>
 
                 <div class="fak-row">
                     <!-- فاکتور -->
