@@ -3,9 +3,15 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 $order_id = isset($_GET['order_id']) ? intval($_GET['order_id']) : 0;
 $order = wc_get_order($order_id);
+<<<<<<< HEAD
 if ( ! $order ) { wp_die( esc_html__( 'سفارش یافت نشد.', 'faktorak' ) ); }
 
 $settings         = new Faktorak_Shipping_Invoice_Settings();
+=======
+if ( ! $order ) { wp_die('سفارش یافت نشد.'); }
+
+$settings         = new ShippingInvoiceSettings();
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 $logo_url         = $settings->get_setting('logo_url');
 $sender_name      = $settings->get_setting('sender_name');
 $sender_address   = $settings->get_setting('sender_address');
@@ -47,9 +53,88 @@ $location = $order->get_meta('_delivery_location');
     <title>برچسب پستی (<?php echo esc_html($order_id); ?>)</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 
     <?php wp_print_styles( array( 'faktorak-custom-fonts', 'faktorak-shipping-label' ) ); ?>
     <?php wp_print_head_scripts(); ?>
+=======
+    <link rel="stylesheet" href="<?php echo esc_url( plugin_dir_url(__FILE__) . '../assets/css/custom-fonts.css' ); ?>" type="text/css" />
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            font-size: 14px;
+            font-family: 'iranyekan', sans-serif !important;
+        }
+        .label-wrapper {
+            background: repeating-linear-gradient(135deg, #CF2004 0px, #CF2004 15px, transparent 15px, transparent 25px, #3EA8F2 25px, #3EA8F2 40px, transparent 40px, transparent 50px);
+            margin: 20px auto;
+            max-width: 1000px;
+            padding: 10px;
+        }
+        .label-inner {
+            background: #FFF;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+
+        /* ⬇️ لوگو: جعبهٔ منعطف بدون کشیدگی */
+        .shop-logo{
+            display:flex;
+            justify-content:flex-end;
+            align-items:center;
+            min-height:90px;
+            border-bottom:1px solid #000;
+            padding:12px 0;
+            margin-bottom:16px;
+        }
+        .logo-box{
+            width:140px;
+            height:90px;
+            border:1px solid #e5e7eb;
+            border-radius:12px;
+            background:#fff;
+            display:flex;align-items:center;justify-content:center;
+            overflow:hidden;
+        }
+        .logo-box img{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            display:block;
+        }
+
+        .table-bordered {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-bordered th, .table-bordered td {
+            border: 1px solid #000;
+            padding: 8px 10px;
+            vertical-align: top;
+        }
+        .title { font-weight: bold; }
+        .order-info {
+            text-align: center;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+        .order-info span { margin: 0 10px; }
+
+        .print-buttons { text-align: center; margin-top: 20px; }
+        .button {
+            background: #FF6347; color: #FFF; text-align: center;
+            border-radius: 2px; line-height: 1.5; cursor: pointer;
+            padding: 5px 15px; display: inline-block; border: none;
+            text-decoration: none; margin: 0 5px;
+        }
+        @media print {
+            *{ -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .print-buttons{ display: none !important; }
+        }
+    </style>
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 </head>
 <body class="faktorak-scope">
     <div class="label-wrapper">
@@ -58,7 +143,11 @@ $location = $order->get_meta('_delivery_location');
             <div class="shop-logo">
                 <?php if ( ! empty( $logo_url ) ) : ?>
                     <div class="logo-box">
+<<<<<<< HEAD
                         <img class="faktorak-no-lazy no-lazy" src="<?php echo esc_url($logo_url); ?>" alt="لوگو" loading="eager" decoding="sync" fetchpriority="high" data-no-lazy="1">
+=======
+                        <img src="<?php echo esc_url($logo_url); ?>" alt="لوگو">
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
                     </div>
                 <?php endif; ?>
             </div>
@@ -94,9 +183,15 @@ $location = $order->get_meta('_delivery_location');
                             </div>
                             <?php endif; ?>
                             <?php if ( $location ) :
+<<<<<<< HEAD
                                 $maps_url = 'https://www.google.com/maps?q=' . rawurlencode( $location ); ?>
                                 <div class="barcode-recipient" style="margin-top: 15px;">
                                     <div class="faktorak-qr" data-qr="<?php echo esc_attr( esc_url( $maps_url ) ); ?>" data-qr-size="90"></div>
+=======
+                                $maps_url = 'https://www.google.com/maps?q=' . $location; ?>
+                                <div class="barcode-recipient" style="margin-top: 15px;">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=<?php echo urlencode($maps_url); ?>" alt="QR Code for Location" />
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
                                 </div>
                             <?php endif; ?>
                         </td>
@@ -140,6 +235,9 @@ $location = $order->get_meta('_delivery_location');
         <a href="#" class="button" onclick="window.print()">چاپ</a>
         <a href="<?php echo esc_url($back_url); ?>" class="button">بازگشت به سفارش</a>
     </div>
+<<<<<<< HEAD
     <?php wp_print_footer_scripts(); ?>
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 </body>
 </html>

@@ -5,6 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * تابع اصلی برای بارگذاری هوک‌های افزونه
  */
 function faktorak_initialize() {
+<<<<<<< HEAD
     $settings = new Faktorak_Shipping_Invoice_Settings();
 
     // هوک‌های عمومی
@@ -34,6 +35,18 @@ function faktorak_initialize() {
     add_action('template_redirect', 'faktorak_shipping_invoice_display_content');
     add_action('init', 'faktorak_shipping_invoice_rewrite_rules');
     add_filter('query_vars', 'faktorak_shipping_invoice_query_vars');
+=======
+    $settings = new ShippingInvoiceSettings();
+
+    // هوک‌های عمومی
+    add_action('admin_menu', 'shipping_invoice_add_menu');
+    add_action('admin_init', 'shipping_invoice_register_settings');
+    add_action('add_meta_boxes', 'shipping_invoice_add_order_metabox');
+    add_action('admin_enqueue_scripts', 'faktorak_enqueue_admin_styles');
+    add_action('template_redirect', 'shipping_invoice_display_content');
+    add_action('init', 'shipping_invoice_rewrite_rules');
+    add_filter('query_vars', 'shipping_invoice_query_vars');
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     add_action('wp_enqueue_scripts', 'faktorak_enqueue_frontend_styles');
 
     // شورت‌کدها
@@ -44,6 +57,7 @@ function faktorak_initialize() {
     add_action('init', 'faktorak_register_proforma_invoice_order_status');
     add_filter('wc_order_statuses', 'faktorak_add_proforma_invoice_to_order_statuses');
     add_action('template_redirect', 'faktorak_handle_create_proforma_invoice');
+<<<<<<< HEAD
     add_action( 'woocommerce_payment_complete', 'faktorak_convert_proforma_to_official_after_payment', 20, 1 );
     add_action( 'woocommerce_order_status_changed', 'faktorak_convert_proforma_to_official_on_status_change', 20, 4 );
 
@@ -54,6 +68,15 @@ function faktorak_initialize() {
     if ( $settings->get_setting('enable_proforma_invoice') === 'yes' ) {
         add_action('woocommerce_proceed_to_checkout', 'faktorak_add_proforma_invoice_button_on_cart', 21);
         add_action('woocommerce_before_checkout_form', 'faktorak_maybe_render_checkout_proforma_cta', 9);
+=======
+
+    // گزینه‌های شرطی
+    if ( $settings->get_setting('show_user_buttons') === 'yes' ) {
+        add_action('woocommerce_order_details_after_order_table', 'shipping_invoice_add_user_buttons_frontend', 10, 1);
+    }
+    if ( $settings->get_setting('enable_proforma_invoice') === 'yes' ) {
+        add_action('woocommerce_proceed_to_checkout', 'faktorak_add_proforma_invoice_button_on_cart', 21);
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     }
     if ( $settings->get_setting('enable_checkout_map') === 'yes' ) {
         add_action('wp_enqueue_scripts', 'faktorak_enqueue_map_assets');
@@ -64,6 +87,7 @@ function faktorak_initialize() {
 }
 add_action('plugins_loaded', 'faktorak_initialize', 20);
 
+<<<<<<< HEAD
 function faktorak_is_print_document_request() {
     $invoice_get = isset( $_GET['invoice'] ) ? sanitize_text_field( wp_unslash( $_GET['invoice'] ) ) : '';
     $label_get   = isset( $_GET['shipping_label'] ) ? sanitize_text_field( wp_unslash( $_GET['shipping_label'] ) ) : '';
@@ -144,17 +168,25 @@ function faktorak_enqueue_custom_fonts_style() {
     }
 }
 
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 
 /*----------------------------
   ADMIN FUNCTIONS
 ----------------------------*/
 
+<<<<<<< HEAD
 function faktorak_shipping_invoice_add_menu() {
     $settings = new Faktorak_Shipping_Invoice_Settings();
+=======
+function shipping_invoice_add_menu() {
+    $settings = new ShippingInvoiceSettings();
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     add_menu_page(
         'تنظیمات فاکتورک', 'فاکتورک', 'manage_options', 'shipping-invoice-settings',
         array($settings, 'settings_page'), 'dashicons-media-document', 80
     );
+<<<<<<< HEAD
     add_submenu_page(
         'shipping-invoice-settings',
         'فاکتور دستی',
@@ -1247,11 +1279,26 @@ function faktorak_shipping_invoice_add_order_metabox() {
     if ($screen && ($screen->id === 'shop_order' || $screen->id === 'woocommerce_page_wc-orders')) {
         add_meta_box(
             'shipping_invoice_metabox', 'فـاکتـورک', 'faktorak_shipping_invoice_metabox_callback',
+=======
+}
+
+function shipping_invoice_register_settings() {
+    $settings = new ShippingInvoiceSettings();
+    $settings->register_settings();
+}
+
+function shipping_invoice_add_order_metabox() {
+    $screen = get_current_screen();
+    if ($screen && ($screen->id === 'shop_order' || $screen->id === 'woocommerce_page_wc-orders')) {
+        add_meta_box(
+            'shipping_invoice_metabox', 'فـاکتـورک', 'shipping_invoice_metabox_callback',
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
             null, 'side', 'default'
         );
     }
 }
 
+<<<<<<< HEAD
 function faktorak_shipping_invoice_metabox_callback($post_or_order) {
     $order_id = is_a($post_or_order, 'WC_Order') ? $post_or_order->get_id() : $post_or_order->ID;
     $urls = faktorak_get_admin_document_urls( $order_id );
@@ -1259,10 +1306,21 @@ function faktorak_shipping_invoice_metabox_callback($post_or_order) {
     <div class="faktorak-scope faktorak-metabox-buttons">
         <a href="<?php echo esc_url( $urls['shipping_label'] ); ?>" target="_blank" rel="noopener" class="button button-primary faktorak-btn">برچسب پستی</a>
         <a href="<?php echo esc_url( $urls['invoice'] ); ?>" target="_blank" rel="noopener" class="button button-primary faktorak-btn">مشاهده فاکتور</a>
+=======
+function shipping_invoice_metabox_callback($post_or_order) {
+    $order_id = is_a($post_or_order, 'WC_Order') ? $post_or_order->get_id() : $post_or_order->ID;
+    $shipping_label_url = add_query_arg(array('shipping_label' => 'true', 'order_id' => $order_id, 'context' => 'admin'), home_url());
+    $invoice_url       = add_query_arg(array('invoice' => 'true', 'order_id' => $order_id, 'context' => 'admin'), home_url());
+    ?>
+    <div class="faktorak-scope" style="display:flex;flex-direction:column;gap:10px;padding:15px 0;">
+        <a href="<?php echo esc_url($shipping_label_url); ?>" target="_blank" class="button button-primary faktorak-btn">برچسب پستی</a>
+        <a href="<?php echo esc_url($invoice_url); ?>" target="_blank" class="button button-primary faktorak-btn">مشاهده فاکتور</a>
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     </div>
     <?php
 }
 
+<<<<<<< HEAD
 function faktorak_get_admin_document_urls( $order_id ) {
     return array(
         'invoice'        => faktorak_get_order_invoice_url( $order_id, 'admin' ),
@@ -1495,6 +1553,79 @@ function faktorak_enqueue_admin_styles($hook) {
             true
         );
     }
+=======
+function faktorak_enqueue_admin_styles($hook) {
+    // فونت
+    wp_enqueue_style('faktorak-custom-fonts', plugin_dir_url(__FILE__) . '../assets/css/custom-fonts.css', array(), '3.0');
+
+    // استایل‌ها
+    $css = "
+    /* فقط دکمه‌های افزونه خودمان */
+    .faktorak-scope a.faktorak-btn{
+        width:100% !important;
+        text-align:center;
+        background:blue;
+        color:#fff !important;
+        font-weight:300;
+        padding:15px;
+        border-radius:12px;
+        display:inline-block;
+        text-decoration:none;
+    }
+    .faktorak-scope a.faktorak-btn:hover{
+        background:blue;
+        color:#fff !important;
+        filter:brightness(0.9);
+    }
+
+    /* هاور کل باکس دکمه‌های صفحه سفارش کاربر */
+    .shipping-invoice-buttons.faktorak-scope:hover{
+        background:blue;
+        border-radius:12px;
+    }
+
+    /* کارت‌ها (با حداکثر عرض برای جلوگیری از اسکرول) */
+    .fak-card{border:1px solid #e5e7eb;border-radius:12px;padding:16px;background:#fff;max-width:980px}
+    .fak-card + .fak-card{margin-top:12px}
+    .fak-row{display:grid;grid-template-columns:1fr;gap:14px}
+
+    /* فیلدها و لیبل‌ها (طبق استایلی که دادی) */
+    .fak-row input, .fak-row textarea{
+        padding:10px 15px;border-radius:12px;margin-top:10px;margin-bottom:5px;border-color:#e5e7eb;border-width:1px;border-style:solid
+    }
+    .fak-row label{font-size:15px !important}
+    input#upload_signature_button, input#upload_logo_button{
+        margin-top:12px;padding:10px 15px;background:#333;border-radius:12px;border:none;color:#fff
+    }
+    .fak-row select{
+        margin-top:10px !important;border-color:#e5e5e5 !important;border-radius:8px !important
+    }
+    .fak-input{margin-top:10px;width:100%;direction:ltr;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:10px}
+
+    /* سوییچر (Toggle) — برنگشته و فعاله */
+    .fak-switch{display:inline-flex;align-items:center;gap:10px}
+    .fak-switch input{display:none}
+    .fak-switch .track{
+        position:relative;width:48px;height:26px;border-radius:999px;
+        background:#e5e7eb;transition:all .2s ease;cursor:pointer
+    }
+    .fak-switch .thumb{
+        position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:999px;background:#fff;transition:all .2s ease;box-shadow:0 1px 2px rgba(0,0,0,.2)
+    }
+	div#shipping_invoice_metabox {
+            border-radius: 12px;
+            padding: 5px;
+            border-color: #e5e5e5;
+        }
+        #shipping_invoice_metabox .faktorak-scope a.faktorak-btn {
+            padding: 7px;
+        }
+    .fak-switch input:checked + .track{background:#2563eb}
+    .fak-switch input:checked + .track .thumb{left:25px}
+    .fak-switch .label{font-size:13px;color:#374151}
+    ";
+    wp_add_inline_style('faktorak-custom-fonts', $css);
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 }
 
 
@@ -1502,6 +1633,7 @@ function faktorak_enqueue_admin_styles($hook) {
   PUBLIC FUNCTIONS
 ----------------------------*/
 
+<<<<<<< HEAD
 function faktorak_enqueue_print_assets( $context ) {
     $assets_url = faktorak_get_assets_url();
     faktorak_enqueue_custom_fonts_style();
@@ -1563,6 +1695,9 @@ function faktorak_enqueue_print_assets( $context ) {
 }
 
 function faktorak_shipping_invoice_add_user_buttons_frontend($order) {
+=======
+function shipping_invoice_add_user_buttons_frontend($order) {
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     if (!$order || !is_a($order, 'WC_Order')) return;
     $order_id = $order->get_id();
 
@@ -1580,15 +1715,24 @@ function faktorak_shipping_invoice_add_user_buttons_frontend($order) {
         home_url()
     );
     ?>
+<<<<<<< HEAD
     <div class="shipping-invoice-buttons faktorak-scope faktorak-user-invoice-buttons">
+=======
+    <div class="shipping-invoice-buttons faktorak-scope" style="margin:20px 0;display:flex;flex-direction:column;gap:10px;">
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
         <a href="<?php echo esc_url($invoice_url); ?>" target="_blank" class="button faktorak-btn">مشاهده فاکتور</a>
     </div>
     <?php
 }
 
+<<<<<<< HEAD
 function faktorak_shipping_invoice_display_content() {
     if (isset($_GET['shipping_label']) && $_GET['shipping_label'] === 'true' && isset($_GET['order_id'])) {
         faktorak_enqueue_print_assets( 'shipping-label' );
+=======
+function shipping_invoice_display_content() {
+    if (isset($_GET['shipping_label']) && $_GET['shipping_label'] === 'true' && isset($_GET['order_id'])) {
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
         include_once plugin_dir_path(__FILE__) . '../templates/shipping-label.php';
         exit;
     }
@@ -1601,28 +1745,47 @@ function faktorak_shipping_invoice_display_content() {
             $token    = isset($_GET['faktorak_token']) ? sanitize_text_field(wp_unslash($_GET['faktorak_token'])) : '';
 
             if ( empty($order_id) || empty($token) || ! wp_verify_nonce($token, 'faktorak_inv_' . $order_id) ) {
+<<<<<<< HEAD
                 wp_die( esc_html__( 'دسترسی غیرمجاز به فاکتور.', 'faktorak' ) );
+=======
+                wp_die(__('دسترسی غیرمجاز به فاکتور.', 'faktorak'));
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
             }
         }
 
         // ✅ انتخاب قالب فاکتور (مدرن/کلاسیک) بر اساس تنظیمات
+<<<<<<< HEAD
         $settings = new Faktorak_Shipping_Invoice_Settings();
         $tpl = $settings->get_setting('invoice_template');
         if ($tpl === 'template-1') { $tpl = 'classic'; } // سازگاری با مقدار قدیمی
         $template_file = ($tpl === 'modern') ? 'invoice-template-modern.php' : 'invoice-template.php';
         faktorak_enqueue_print_assets( ($tpl === 'modern') ? 'invoice-modern' : 'invoice-classic' );
+=======
+        $settings = new ShippingInvoiceSettings();
+        $tpl = $settings->get_setting('invoice_template');
+        if ($tpl === 'template-1') { $tpl = 'classic'; } // سازگاری با مقدار قدیمی
+        $template_file = ($tpl === 'modern') ? 'invoice-template-modern.php' : 'invoice-template.php';
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 
         include_once plugin_dir_path(__FILE__) . '../templates/' . $template_file;
         exit;
     }
 }
 
+<<<<<<< HEAD
 function faktorak_shipping_invoice_rewrite_rules() {
+=======
+function shipping_invoice_rewrite_rules() {
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     add_rewrite_rule('^shipping-label/?$', 'index.php?shipping_label=true', 'top');
     add_rewrite_rule('^invoice/?$', 'index.php?invoice=true', 'top');
 }
 
+<<<<<<< HEAD
 function faktorak_shipping_invoice_query_vars($vars) {
+=======
+function shipping_invoice_query_vars($vars) {
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     $vars[] = 'shipping_label';
     $vars[] = 'invoice';
     $vars[] = 'order_id';
@@ -1630,6 +1793,7 @@ function faktorak_shipping_invoice_query_vars($vars) {
 }
 
 function faktorak_enqueue_frontend_styles() {
+<<<<<<< HEAD
     faktorak_enqueue_custom_fonts_style();
     wp_enqueue_style(
         'faktorak-frontend-ui',
@@ -1637,6 +1801,32 @@ function faktorak_enqueue_frontend_styles() {
         array( 'faktorak-custom-fonts' ),
         defined( 'FAKTORAK_VERSION' ) ? FAKTORAK_VERSION : '1.0.0'
     );
+=======
+    wp_enqueue_style('faktorak-custom-fonts', plugin_dir_url(__FILE__) . '../assets/css/custom-fonts.css', array(), '3.0');
+
+    $css = "
+    .faktorak-scope a.faktorak-btn{
+        width:100% !important;
+        text-align:center;
+        background:blue;
+        color:#fff !important;
+        font-weight:300;
+        padding:15px;
+        border-radius:12px;
+        display:inline-block;
+        text-decoration:none;
+    }
+    .faktorak-scope a.faktorak-btn:hover{
+        background:blue;
+        color:#fff !important;
+        filter:brightness(0.9);
+    }
+    .shipping-invoice-buttons.faktorak-scope:hover{
+        background:blue;
+        border-radius:12px;
+    }";
+    wp_add_inline_style('faktorak-custom-fonts', $css);
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 }
 
 
@@ -1718,6 +1908,7 @@ function faktorak_proforma_invoice_button_shortcode( $atts ) {
             'faktorak_token' => $token,
         ), home_url() );
     } else {
+<<<<<<< HEAD
         $is_checkout_context = function_exists( 'is_checkout' ) && is_checkout();
         if ( ! is_user_logged_in() && ! $is_checkout_context ) {
             $url = faktorak_get_proforma_prepare_checkout_url();
@@ -1725,6 +1916,12 @@ function faktorak_proforma_invoice_button_shortcode( $atts ) {
             $base_url = $is_checkout_context ? wc_get_checkout_url() : wc_get_cart_url();
             $url      = faktorak_get_proforma_create_url( $base_url );
         }
+=======
+        $url = wp_nonce_url(
+            add_query_arg( 'create_proforma_invoice', 'true', wc_get_cart_url() ),
+            'faktorak_create_proforma'
+        );
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     }
 
     $link = sprintf(
@@ -1764,6 +1961,7 @@ function faktorak_add_proforma_invoice_to_order_statuses($order_statuses) {
     return $new_order_statuses;
 }
 
+<<<<<<< HEAD
 function faktorak_get_proforma_create_url( $base_url = '' ) {
     if ( '' === $base_url ) {
         $base_url = wc_get_cart_url();
@@ -2079,11 +2277,50 @@ function faktorak_handle_create_proforma_invoice() {
             // ✅ ریدایرکت به فاکتورِ پیش‌فاکتور با توکن امنیتی
             $token       = wp_create_nonce( 'faktorak_inv_' . $order_id );
             $invoice_url = add_query_arg( array(
+=======
+function faktorak_add_proforma_invoice_button_on_cart() {
+    if (WC()->cart->is_empty()) return;
+    $url = wp_nonce_url(add_query_arg('create_proforma_invoice', 'true', wc_get_cart_url()), 'faktorak_create_proforma');
+    echo '<div class="faktorak-scope" style="margin-top:15px;text-align:right;"><a href="' . esc_url($url) . '" class="button faktorak-btn">دریافت پیش فاکتور</a></div>';
+}
+
+function faktorak_handle_create_proforma_invoice() {
+    if (!isset($_GET['create_proforma_invoice']) || $_GET['create_proforma_invoice'] !== 'true') return;
+
+    if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_REQUEST['_wpnonce'])), 'faktorak_create_proforma')) {
+        wp_die('خطای امنیتی. لطفاً دوباره تلاش کنید.');
+    }
+    if (WC()->cart->is_empty()) {
+        wp_redirect(wc_get_cart_url());
+        exit;
+    }
+    try {
+        $order = wc_create_order();
+        foreach (WC()->cart->get_cart() as $cart_item) {
+            $product = $cart_item['data'];
+            $order->add_product($product, $cart_item['quantity'], array('variation' => $cart_item['variation']));
+        }
+        if (is_user_logged_in()) {
+            $user_id  = get_current_user_id();
+            $customer = new WC_Customer($user_id);
+            $order->set_customer_id($user_id);
+            $order->set_address($customer->get_billing(), 'billing');
+            $order->set_address($customer->get_shipping(), 'shipping');
+        }
+        $order->calculate_totals();
+        $order->update_status('proforma-invoice', 'پیش فاکتور توسط کاربر از سبد خرید ایجاد شد.', true);
+        $order_id = $order->get_id();
+        if ($order_id) {
+            // ✅ ریدایرکت به فاکتورِ پیش‌فاکتور با توکن امنیتی
+            $token = wp_create_nonce('faktorak_inv_' . $order_id);
+            $invoice_url = add_query_arg(array(
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
                 'invoice'        => 'true',
                 'order_id'       => $order_id,
                 'context'        => 'proforma',
                 'is_proforma'    => 'true',
                 'faktorak_token' => $token,
+<<<<<<< HEAD
             ), home_url() );
             wp_safe_redirect( $invoice_url );
             exit;
@@ -2101,10 +2338,20 @@ function faktorak_handle_create_proforma_invoice() {
         } else {
             wp_safe_redirect( wc_get_cart_url() );
         }
+=======
+            ), home_url());
+            wp_redirect($invoice_url);
+            exit;
+        }
+    } catch (Exception $e) {
+        wc_add_notice('خطا در ایجاد پیش فاکتور: ' . $e->getMessage(), 'error');
+        wp_redirect(wc_get_cart_url());
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
         exit;
     }
 }
 
+<<<<<<< HEAD
 function faktorak_convert_proforma_doc_type_to_official( $order ) {
     if ( ! $order || ! is_a( $order, 'WC_Order' ) ) {
         return false;
@@ -2152,6 +2399,8 @@ function faktorak_convert_proforma_to_official_on_status_change( $order_id, $fro
     faktorak_convert_proforma_doc_type_to_official( $order );
 }
 
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 
 /*----------------------------
   CHECKOUT MAP FUNCTIONS
@@ -2159,6 +2408,7 @@ function faktorak_convert_proforma_to_official_on_status_change( $order_id, $fro
 
 function faktorak_enqueue_map_assets() {
     if (is_checkout()) {
+<<<<<<< HEAD
         $vendor_url = plugin_dir_url(__FILE__) . '../assets/vendor/';
 
         wp_enqueue_style('leaflet-css', $vendor_url . 'leaflet/leaflet.css', array(), '1.9.4');
@@ -2169,6 +2419,14 @@ function faktorak_enqueue_map_assets() {
 
         wp_enqueue_style('leaflet-locate-css', $vendor_url . 'leaflet-locatecontrol/L.Control.Locate.min.css', array('leaflet-css'), '0.85.1');
         wp_enqueue_script('leaflet-locate-js', $vendor_url . 'leaflet-locatecontrol/L.Control.Locate.min.js', array('leaflet-js'), '0.85.1', true);
+=======
+        wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet/dist/leaflet.css');
+        wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet/dist/leaflet.js', [], null, true);
+        wp_enqueue_style('leaflet-geocoder-css', 'https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css');
+        wp_enqueue_script('leaflet-geocoder-js', 'https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js', ['leaflet-js'], null, true);
+        wp_enqueue_style('leaflet-locate-css', 'https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css');
+        wp_enqueue_script('leaflet-locate-js', 'https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js', ['leaflet-js'], null, true);
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 
         /* استایل‌های UI نقشه (طبق خواسته تو) */
         $map_css = "
@@ -2218,7 +2476,11 @@ function faktorak_enqueue_map_assets() {
 
 function faktorak_display_checkout_map($checkout){
     echo '<div class="fb-map-message">می‌توانید برای ارسال مطمئن‌تر، لوکیشن خود را روی نقشه ثبت کنید.</div>';
+<<<<<<< HEAD
     echo '<div id="fb-map" class="fb-map-canvas"></div>';
+=======
+    echo '<div id="fb-map" style="height:400px;width:100%;"></div>';
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     echo '<input type="hidden" id="checkout_latlng" name="checkout_latlng">';
 }
 
@@ -2231,9 +2493,15 @@ function faktorak_save_map_location($order, $data){
 function faktorak_display_location_in_admin($order){
     $location = $order->get_meta('_delivery_location');
     if($location){
+<<<<<<< HEAD
         $maps_url = 'https://www.google.com/maps?q=' . rawurlencode( $location );
         echo '<p><strong>لوکیشن ارسال: </strong><br><a href="'.esc_url($maps_url).'" target="_blank" rel="noopener noreferrer">برای دیدن لوکیشن ارسال کلیک کنید</a></p>';
         echo '<div class="faktorak-qr" data-qr="' . esc_attr( esc_url( $maps_url ) ) . '" data-qr-size="150"></div>';
+=======
+        $maps_url = 'https://www.google.com/maps?q=' . $location;
+        echo '<p><strong>لوکیشن ارسال: </strong><br><a href="'.esc_url($maps_url).'" target="_blank">برای دیدن لوکیشن ارسال کلیک کنید</a></p>';
+        echo '<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='.urlencode($maps_url).'" alt="QR Code" />';
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     }
 }
 
@@ -2259,6 +2527,7 @@ function faktorak_process_convert_order_action( $order ) {
     $order->add_order_note( __( 'ایمیل فاکتور به همراه لینک پرداخت برای مشتری ارسال شد.', 'faktorak' ) );
 }
 add_action( 'woocommerce_order_action_faktorak_convert_to_payable', 'faktorak_process_convert_order_action' );
+<<<<<<< HEAD
 
 /*----------------------------
   PROMOTION FUNCTIONS
@@ -2447,3 +2716,5 @@ function faktorak_order_export_admin_inline_assets() {
     <?php
 }
 add_action( 'admin_head', 'faktorak_order_export_admin_inline_assets' );
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67

@@ -8,7 +8,11 @@ if ( ! $order ) {
     wp_die( esc_html__('سفارش پیدا نشد.', 'faktorak') );
 }
 
+<<<<<<< HEAD
 $settings = new Faktorak_Shipping_Invoice_Settings();
+=======
+$settings = new ShippingInvoiceSettings();
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 
 /** اطلاعات فروشگاه از تنظیمات افزونه */
 $store = array(
@@ -23,9 +27,12 @@ $store = array(
 
 /** نمایشِ «فاکتور فروش / پیش‌فاکتور» */
 $is_proforma = ( isset($_GET['is_proforma']) && $_GET['is_proforma'] === 'true' );
+<<<<<<< HEAD
 if ( ! $is_proforma ) {
     $is_proforma = $order->has_status( 'proforma-invoice' ) || 'proforma' === $order->get_meta( '_faktorak_doc_type' );
 }
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 $badge_text  = $is_proforma ? 'پیش‌فاکتور' : 'فاکتور فروش';
 
 /** متادیتای سفارش */
@@ -53,6 +60,7 @@ $total      = (float) $order->get_total();
 
 /** QR برای صفحه مشاهده سفارش */
 $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink('myaccount') );
+<<<<<<< HEAD
 ?>
 <!DOCTYPE html>
 <html dir="rtl" lang="fa-IR">
@@ -66,16 +74,109 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
 <body class="faktorak-scope">
 <div class="faktorak-scope">
   <div class="faktorak-invoice" dir="rtl">
+=======
+$qr_src   = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' . rawurlencode( $view_url );
+?>
+<div class="faktorak-scope">
+  <div class="faktorak-invoice" dir="rtl">
+    <!-- فونت افزونه -->
+    <link rel="stylesheet" href="<?php echo esc_url( plugin_dir_url(__FILE__) . '../assets/css/custom-fonts.css' ); ?>" type="text/css" />
+
+    <style>
+      .faktorak-invoice{
+        --fak-primary:#2563eb;
+        --fak-border:#e5e7eb;
+        --fak-text:#111827;
+        --fak-muted:#6b7280;
+        --fak-bg:#ffffff;
+        --fak-soft:#f9fafb;
+        font-family: 'iranyekan', sans-serif;
+        color: var(--fak-text);
+        background: var(--fak-bg);
+        max-width: 900px;
+        margin: 24px auto;
+        padding: 24px;
+        border: 1px solid var(--fak-border);
+        border-radius: 14px;
+      }
+      .fak-header{
+        display: grid;
+        grid-template-columns: 1.2fr .8fr;
+        gap: 16px;
+        align-items: center;
+        border-bottom:1px solid var(--fak-border);
+        padding-bottom:16px;
+        margin-bottom:16px;
+      }
+      .fak-brand{display:flex; gap:16px; align-items:center}
+/* لوگو: نمایش درست برای همه‌ی نسبت‌ها و شکل‌ها */
+.fak-logo{
+  width: 72px;
+  height: 72px;
+  /* داخل یک کادر ثابت، بدون بُرش */
+  object-fit: contain;       /* قبلاً cover بود و لوگو رو می‌برید */
+  background: #fff;
+  border: 1px solid var(--fak-border);
+  border-radius: 12px;       /* گوشه‌های نرمِ کادر */
+  padding: 6px;              /* نفس برای لوگوهای کشیده/طویل */
+  display: block;            /* جلوگیری از فاصله‌های ناخواسته */
+}      .fak-store h1{font-size:20px; margin:0 0 6px}
+      .fak-store .meta{font-size:12px; color:var(--fak-muted); line-height:1.8}
+      .fak-invoice-id{text-align:left;}
+      .fak-invoice-id .badge{display:inline-block;background:var(--fak-soft);border:1px dashed var(--fak-border);color:var(--fak-muted); padding:6px 10px; border-radius:10px; font-size:12px; margin-bottom:8px}
+      .fak-invoice-id h2{margin:0 0 4px; font-size:22px}
+      .fak-invoice-id .meta{font-size:12px; color:var(--fak-muted)}
+      .fak-cards{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:16px;}
+      .fak-card{border:1px solid var(--fak-border); border-radius:12px; padding:14px; background:#fff;}
+      .fak-card h3{margin:0 0 10px; font-size:14px; color:var(--fak-muted)}
+      .fak-card .row{font-size:13px; line-height:1.9}
+      .fak-summary{display:grid; grid-template-columns:2fr 1fr; gap:12px; margin-bottom:16px;}
+      .fak-note{border:1px solid var(--fak-border); border-radius:12px; background:var(--fak-soft); padding:14px; font-size:13px; color:#374151;}
+      .fak-stamp{border:1px dashed var(--fak-border); border-radius:12px; padding:12px; text-align:center; background:#fff;}
+      .fak-stamp img{max-height:70px; object-fit:contain; display:block; margin:0 auto 6px}
+      .fak-stamp .cap{font-size:12px; color:var(--fak-muted)}
+      table.fak-items{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border:1px solid var(--fak-border); border-radius:12px; background:#fff;}
+      .fak-items thead th{background:var(--fak-soft); font-weight:600; font-size:13px; text-align:center; padding:12px; border-bottom:1px solid var(--fak-border);}
+      .fak-items tbody td{font-size:13px; padding:12px; border-bottom:1px solid var(--fak-border); text-align:center; vertical-align:top;}
+      .fak-items tbody tr:last-child td{border-bottom:none}
+      .fak-items .text-right{text-align:right}
+      .fak-total{display:grid; grid-template-columns:1fr 360px; gap:16px; margin-top:16px; align-items:start;}
+      .fak-total .spacer{height:1px}
+      .fak-total .box{border:1px solid var(--fak-border); border-radius:12px; padding:0; overflow:hidden; background:#fff;}
+      .fak-total .box .row{display:grid; grid-template-columns:1fr auto; gap:12px; padding:12px 14px; font-size:14px; border-bottom:1px solid var(--fak-border);}
+      .fak-total .box .row:last-child{border-bottom:none}
+      .fak-total .box .row.total{background:var(--fak-soft); font-weight:700}
+      .fak-footer{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; align-items:center;}
+      .fak-qr{display:flex; align-items:center; gap:12px; border:1px dashed var(--fak-border); border-radius:12px; padding:12px;}
+      .fak-qr img{width:92px; height:92px; border-radius:8px; background:#fff}
+      .fak-qr .meta{font-size:12px; color:var(--fak-muted)}
+      .fak-thanks{text-align:left; color:var(--fak-muted); font-size:12px;}
+      .fak-brand-hr{height:4px; background:linear-gradient(90deg, var(--fak-primary), #60a5fa); border-radius:999px; margin:8px 0 16px 0;}
+      .fak-actions{display:flex; gap:8px; justify-content:flex-start; margin-bottom:12px}
+      .fak-btn{display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; background:var(--fak-primary); color:#fff; font-size:13px; border:0; cursor:pointer}
+      .fak-btn.outline{background:#fff; color:var(--fak-primary); border:1px solid var(--fak-primary)}
+      @media print{
+        .fak-actions{display:none !important;}
+        .faktorak-invoice{box-shadow:none; border:0; margin:0; padding:0;}
+        @page{ size:A4; margin:10mm; }
+      }
+    </style>
+
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     <!-- اکشن‌ها (نمایش؛ در چاپ مخفی) -->
     <div class="fak-actions">
       <button onclick="window.print()" class="fak-btn">چاپ فاکتور</button>
       <?php
       $context  = isset($_GET['context']) ? sanitize_text_field(wp_unslash($_GET['context'])) : '';
+<<<<<<< HEAD
       $referrer = isset($_GET['referrer']) ? wp_unslash($_GET['referrer']) : '';
       $payment_url = '';
       if ( ! $order->is_paid() ) {
           $payment_url = faktorak_get_order_payment_url( $order_id, $context ? $context : 'frontend' );
       }
+=======
+      $referrer = isset($_GET['referrer']) ? esc_url_raw(wp_unslash($_GET['referrer'])) : '';
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
       if ($context === 'admin') {
           $back_url = admin_url( 'post.php?post=' . $order_id . '&action=edit' );
       } elseif ($referrer) {
@@ -84,9 +185,12 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
           $back_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink('myaccount') );
       }
       ?>
+<<<<<<< HEAD
       <?php if ( $payment_url ) : ?>
       <a href="<?php echo esc_url($payment_url); ?>" class="fak-btn">پرداخت</a>
       <?php endif; ?>
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
       <a href="<?php echo esc_url($back_url); ?>" class="fak-btn outline">بازگشت</a>
     </div>
 
@@ -94,7 +198,11 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
     <div class="fak-header">
       <div class="fak-brand">
         <?php if ( ! empty($store['logo']) ): ?>
+<<<<<<< HEAD
           <img class="fak-logo faktorak-no-lazy no-lazy" src="<?php echo esc_url($store['logo']); ?>" alt="<?php echo esc_attr($store['name']); ?>" loading="eager" decoding="sync" fetchpriority="high" data-no-lazy="1">
+=======
+          <img class="fak-logo" src="<?php echo esc_url($store['logo']); ?>" alt="<?php echo esc_attr($store['name']); ?>">
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
         <?php else: ?>
           <div class="fak-logo" style="display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:12px">LOGO</div>
         <?php endif; ?>
@@ -111,9 +219,13 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
                   $host
               ]);
               echo esc_html( implode(' | ', $line1) );
+<<<<<<< HEAD
               if ( $line1 ) {
                   echo '<br>';
               }
+=======
+              echo $line1 ? '<br>' : '';
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
               echo esc_html( implode(' | ', $line2) );
             ?>
           </div>
@@ -151,6 +263,7 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
     <!-- یادداشت و امضا -->
     <div class="fak-summary">
       <div class="fak-note">
+<<<<<<< HEAD
         <?php
         $admin_note    = trim( (string) $settings->get_setting('admin_note') );
         $customer_note = trim( (string) $order->get_customer_note() );
@@ -171,13 +284,26 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
           <strong>یادداشت مشتری:</strong>
           <div><?php echo wp_kses_post( nl2br( esc_html( $customer_note ) ) ); ?></div>
         <?php endif; ?>
+=======
+        <strong>یادداشت فروشنده:</strong>
+        <div>
+          <?php
+          $customer_note = trim( $order->get_customer_note() );
+          echo $customer_note ? esc_html( $customer_note ) : 'از خرید شما سپاسگزاریم.';
+          ?>
+        </div>
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
       </div>
       <div class="fak-stamp">
         <?php
         $signature_url    = $settings->get_setting('signature_url');
         $enable_signature = ($settings->get_setting('enable_signature') === 'yes');
         if ( $enable_signature && ! empty($signature_url) ): ?>
+<<<<<<< HEAD
           <img class="faktorak-no-lazy no-lazy" src="<?php echo esc_url( $signature_url ); ?>" alt="امضا/مهر" loading="eager" decoding="sync" data-no-lazy="1">
+=======
+          <img src="<?php echo esc_url( $signature_url ); ?>" alt="امضا/مهر">
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
           <div class="cap">امضا و مهر فروشنده</div>
         <?php else: ?>
           <div style="color:#9ca3af;font-size:12px;padding:22px 0">بدون امضا</div>
@@ -186,7 +312,10 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
     </div>
 
     <!-- جدول اقلام -->
+<<<<<<< HEAD
     <div class="fak-items-wrap">
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     <table class="fak-items">
       <thead>
         <tr>
@@ -217,6 +346,7 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
           </td>
           <td><?php echo esc_html( wc_format_decimal($qty, 0) ); ?></td>
           <td><?php echo wp_kses_post( wc_price($unit_price, array('currency' => $order->get_currency())) ); ?></td>
+<<<<<<< HEAD
           <td>
             <?php
             if ( $line_disc ) {
@@ -235,12 +365,19 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
             }
             ?>
           </td>
+=======
+          <td><?php echo $line_disc ? wp_kses_post( wc_price($line_disc, array('currency'=>$order->get_currency())) ) : '0'; ?></td>
+          <td><?php echo $line_tax ? wp_kses_post( wc_price($line_tax, array('currency'=>$order->get_currency())) ) : '0'; ?></td>
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
           <td><?php echo wp_kses_post( wc_price($line_total + $line_tax, array('currency' => $order->get_currency())) ); ?></td>
         </tr>
         <?php endforeach; ?>
       </tbody>
     </table>
+<<<<<<< HEAD
     </div>
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 
     <!-- جمع کل -->
     <div class="fak-total">
@@ -257,7 +394,11 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
     <!-- فوتر -->
     <div class="fak-footer">
       <div class="fak-qr">
+<<<<<<< HEAD
         <div class="faktorak-qr" data-qr="<?php echo esc_attr( esc_url( $view_url ) ); ?>" data-qr-size="92"></div>
+=======
+        <img src="<?php echo esc_url( $qr_src ); ?>" alt="QR">
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
         <div>
           <div style="font-weight:600; margin-bottom:6px">پیگیری سفارش</div>
           <div class="meta">برای مشاهده جزئیات سفارش، QR را اسکن کنید یا به لینک سفارش مراجعه کنید.</div>
@@ -271,6 +412,9 @@ $view_url = wc_get_endpoint_url( 'view-order', $order_id, wc_get_page_permalink(
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 <?php wp_print_footer_scripts(); ?>
 </body>
 </html>
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67

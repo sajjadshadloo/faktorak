@@ -1,26 +1,45 @@
 <?php
 /*
+<<<<<<< HEAD
  Plugin Name: فاکتورک (Faktorak)
  Plugin URI: https://sajjadshadloo.ir/product/faktorak-plugin/
  Description: افزونه فاکتور و برچسب پستی برای فروشگاه‌های ووکامرسی - این افزونه امکانات چاپ فاکتور، برچسب پستی و مدیریت سفارشات را فراهم می‌کند.
  Version: 1.5.0
  Author: سجاد شادلو
  Author URI: https://sajjadshadloo.ir
+=======
+Plugin Name: فاکتورک (Factorak)
+Plugin URI: https://sajjadshadloo.ir/product/faktorak-plugin/
+Description: افزونه فاکتور و برچسب پستی برای فروشگاه‌های ووکامرسی - این افزونه امکانات چاپ فاکتور، برچسب پستی و مدیریت سفارشات را فراهم می‌کند.
+Version: 1.3.1
+Author: سجاد شادلو
+Author URI: https://sajjadshadloo.ir
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: faktorak
 Domain Path: /languages
+<<<<<<< HEAD
  Requires at least: 5.0
  Tested up to: 6.9s
  WC requires at least: 3.0
  WC Tested up to: 9.0
  Tags: invoice, shipping label, woocommerce, invoice printing, label printing
  */
+=======
+Requires at least: 5.0
+Tested up to: 6.8
+WC requires at least: 3.0
+WC Tested up to: 9.0
+Tags: invoice, shipping label, woocommerce, invoice printing, label printing
+*/
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 // تعریف مسیر افزونه
 define( 'FAKTORAK_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+<<<<<<< HEAD
 define( 'FAKTORAK_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'FAKTORAK_VERSION', '1.5.0' );
 define( 'FAKTORAK_SUPPORT_NAME', 'سجاد شادلو' );
@@ -37,6 +56,11 @@ require_once FAKTORAK_PLUGIN_DIR . 'includes/class-shipping-invoice-settings.php
 require_once FAKTORAK_PLUGIN_DIR . 'includes/class-faktorak-order-export.php';
 require_once FAKTORAK_PLUGIN_DIR . 'includes/class-faktorak-support-modal.php';
 require_once FAKTORAK_PLUGIN_DIR . 'includes/class-faktorak-plugin-manager-client.php';
+=======
+
+// فراخوانی فایل‌های مورد نیاز
+require_once FAKTORAK_PLUGIN_DIR . 'includes/class-shipping-invoice-settings.php';
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 require_once FAKTORAK_PLUGIN_DIR . 'includes/functions.php';
 
 // بررسی وجود ووکامرس در زمان مناسب
@@ -44,12 +68,17 @@ add_action( 'plugins_loaded', 'faktorak_check_woocommerce' );
 function faktorak_check_woocommerce() {
     if ( ! class_exists( 'WooCommerce' ) ) {
         add_action( 'admin_notices', function() {
+<<<<<<< HEAD
             echo '<div class="error"><p>' . esc_html__( 'افزونه فاکتورک نیازمند ووکامرس است. لطفاً ووکامرس را نصب و فعال کنید.', 'faktorak' ) . '</p></div>';
+=======
+            echo '<div class="error"><p>' . __( 'افزونه فاکتورک نیازمند ووکامرس است. لطفاً ووکامرس را نصب و فعال کنید.', 'faktorak' ) . '</p></div>';
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
         });
         return;
     }
 
     // راه‌اندازی تنظیمات افزونه
+<<<<<<< HEAD
     new Faktorak_Shipping_Invoice_Settings();
 }
 
@@ -65,6 +94,9 @@ function faktorak_load_plugin_manager_client() {
     if ( is_admin() && class_exists( 'Faktorak_Plugin_Manager_Client' ) ) {
         new Faktorak_Plugin_Manager_Client();
     }
+=======
+    new ShippingInvoiceSettings();
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 }
 
 // ✅ سازگاری با HPOS (WooCommerce High-Performance Order Storage) — فقط همین یک‌بار

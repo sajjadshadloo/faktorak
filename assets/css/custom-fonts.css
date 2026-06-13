@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Font-face is injected via PHP (absolute URL) to avoid broken relative paths in minify/cache setups. */
 
 html body.faktorak-scope,
@@ -17,6 +18,30 @@ body.shipping-invoice-settings_page_faktorak-manual-invoices-list #wpbody-conten
 .column-faktorak_actions * {
     font-family: 'iranyekan' !important;
     font-weight: 400;
+=======
+@font-face {
+    font-family: 'iranyekan';
+    src: url('../fonts/iranyekanwebregularfanum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* اعمال فونت در کل افزونه با اولویت بالا */
+html body.faktorak-scope,
+html .faktorak-scope,
+html .faktorak-scope *,
+html .faktorak-scope *:before,
+html .faktorak-scope *:after {
+    font-family: 'iranyekan' !important;
+}
+
+/* ... (سایر استایل‌های فونت) ... */
+
+li#toplevel_page_shipping-invoice-settings .wp-menu-name,
+li#toplevel_page_shipping-invoice-settings .wp-menu-name * {
+    font-family: 'iranyekan' !important;
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 }
 
 /* --- Styles for Leaflet Map on Checkout Page --- */
@@ -61,7 +86,11 @@ body.shipping-invoice-settings_page_faktorak-manual-invoices-list #wpbody-conten
 .leaflet-control-geocoder-form-no-error,
 .leaflet-control-geocoder-form input,
 .leaflet-control-geocoder-alternatives {
+<<<<<<< HEAD
     font-family: 'iranyekan' !important;
+=======
+    font-family: inherit;
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
     font-size: .8rem;
 }
 .leaflet-control-geocoder-form input {
@@ -84,6 +113,7 @@ body.shipping-invoice-settings_page_faktorak-manual-invoices-list #wpbody-conten
     display: none;
 }
 
+<<<<<<< HEAD
 .fb-map-message,
 .leaflet-container,
 .leaflet-control-geocoder,
@@ -92,6 +122,8 @@ body.shipping-invoice-settings_page_faktorak-manual-invoices-list #wpbody-conten
 .leaflet-control-locate * {
     font-family: 'iranyekan' !important;
 }
+=======
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 
 div#shipping_invoice_metabox {
     border-radius: 12px;
@@ -99,6 +131,10 @@ div#shipping_invoice_metabox {
     border-color: #e5e5e5;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1bb510fb4a53ee2d86c429d2c046eeeee2945d67
 #shipping_invoice_metabox .faktorak-scope a.faktorak-btn{
     padding: 10px;
 }
