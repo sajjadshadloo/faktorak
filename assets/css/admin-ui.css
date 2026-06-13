@@ -1,0 +1,1458 @@
+﻿.faktorak-scope a.faktorak-btn {
+  width: 100% !important;
+  display: inline-block;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #1f6fb2;
+  color: #fff !important;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.faktorak-scope a.faktorak-btn:hover {
+  background: #185b90;
+  color: #fff !important;
+}
+
+.shipping-invoice-buttons.faktorak-scope:hover {
+  border-radius: 12px;
+}
+
+div#shipping_invoice_metabox {
+  border-radius: 12px;
+  padding: 5px;
+  border-color: #e5e5e5;
+}
+
+#shipping_invoice_metabox .faktorak-scope a.faktorak-btn {
+  padding: 7px;
+}
+
+.faktorak-metabox-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 0;
+}
+
+.column-faktorak_actions {
+  width: 180px;
+}
+
+.faktorak-order-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.faktorak-order-actions .button {
+  margin: 0;
+}
+
+.faktorak-search-results {
+  margin-top: 6px;
+  max-height: 220px;
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.faktorak-search-item {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+}
+
+.faktorak-search-item:last-child {
+  border-bottom: 0;
+}
+
+.faktorak-search-item:hover {
+  background: #eff6ff;
+}
+
+.faktorak-search-item .sku {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+body.toplevel_page_shipping-invoice-settings .faktorak-settings-page {
+  max-width: none;
+  width: auto;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-settings-form {
+  margin-top: 12px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(360px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-main-col,
+body.toplevel_page_shipping-invoice-settings .fak-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .fak-page-grid
+  .fak-card
+  + .fak-card {
+  margin-top: 0;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-card {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  padding: 16px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-card + .fak-card {
+  margin-top: 14px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-page-title {
+  margin-bottom: 10px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-card-title {
+  margin: 0 0 14px;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-divider {
+  margin: 22px 0;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-row {
+  display: grid;
+  gap: 14px 16px;
+  align-items: start;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-settings-grid,
+body.toplevel_page_shipping-invoice-settings .fak-features-grid,
+body.toplevel_page_shipping-invoice-settings .fak-shortcodes-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .fak-side-col
+  .fak-shortcodes-grid {
+  grid-template-columns: 1fr;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-settings-grid > .fak-field,
+body.toplevel_page_shipping-invoice-settings .fak-features-grid > .fak-switch,
+body.toplevel_page_shipping-invoice-settings
+  .fak-shortcodes-grid
+  > .fak-shortcode-card {
+  min-width: 0;
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .fak-settings-grid
+  > .fak-field:nth-child(3),
+body.toplevel_page_shipping-invoice-settings
+  .fak-settings-grid
+  > .fak-field:nth-child(8) {
+  grid-column: 1 / -1;
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .fak-settings-grid
+  > .fak-field.fak-field-logo {
+  grid-column: 1 / -1;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  font-weight: 400;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-field-label {
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-row input[type="text"],
+body.toplevel_page_shipping-invoice-settings .fak-row input[type="email"],
+body.toplevel_page_shipping-invoice-settings .fak-row input[type="url"],
+body.toplevel_page_shipping-invoice-settings .fak-row textarea,
+body.toplevel_page_shipping-invoice-settings .fak-row select {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px 12px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-row textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-row .description {
+  margin: 0;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-logo-uploader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 12px;
+  align-items: stretch;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-logo-main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+body.toplevel_page_shipping-invoice-settings #upload_logo_button,
+body.toplevel_page_shipping-invoice-settings #upload_signature_button {
+  width: auto;
+  margin-top: 2px;
+  border: 0;
+  border-radius: 12px;
+  background: #2f3337;
+  color: #fff;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-media-preview-wrap {
+  margin: 0;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-media-preview {
+  display: block;
+  max-width: 150px;
+  height: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  padding: 4px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-logo-preview-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 172px;
+  border: 1px dashed #c8d2df;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f8fafc, #f3f6fa);
+  padding: 10px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-logo-preview-placeholder {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-features-grid .fak-switch {
+  display: flex !important;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 64px;
+  box-sizing: border-box;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  padding: 12px 14px;
+  flex-direction: row-reverse;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-switch input {
+  display: none;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-switch .track {
+  position: relative;
+  flex: 0 0 auto;
+  width: 54px;
+  height: 30px;
+  border-radius: 999px;
+  background: #cfd8e3;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-switch .thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #fff;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .fak-switch
+  input:checked
+  + .track {
+  background: #2563eb;
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .fak-switch
+  input:checked
+  + .track
+  .thumb {
+  left: 27px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-switch .label {
+  flex: 1 1 auto;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: right;
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .fak-switch
+  input:focus-visible
+  + .track {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-section-note {
+  margin: 0 0 16px;
+  color: #4b5563;
+  font-weight: 400;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-shortcode-card {
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-shortcode-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-shortcode-title {
+  margin-bottom: 6px;
+  color: #1f2937;
+  font-weight: 400;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-shortcode-desc {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-copy-btn--inline {
+  width: auto !important;
+  min-width: 72px;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  direction: ltr;
+  text-align: left;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-submit-wrap .submit {
+  margin: 0;
+  padding: 0;
+}
+
+body.toplevel_page_shipping-invoice-settings .fak-submit-wrap .button {
+  min-height: 52px;
+  padding: 0 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .fak-submit-wrap
+  .button.button-primary {
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.18);
+}
+
+@media (max-width: 1400px) {
+  body.toplevel_page_shipping-invoice-settings .fak-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.toplevel_page_shipping-invoice-settings
+    .fak-side-col
+    .fak-shortcodes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  body.toplevel_page_shipping-invoice-settings .fak-settings-grid,
+  body.toplevel_page_shipping-invoice-settings .fak-features-grid,
+  body.toplevel_page_shipping-invoice-settings .fak-shortcodes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.toplevel_page_shipping-invoice-settings
+    .fak-settings-grid
+    > .fak-field:nth-child(3),
+  body.toplevel_page_shipping-invoice-settings
+    .fak-settings-grid
+    > .fak-field:nth-child(8) {
+    grid-column: auto;
+  }
+
+  body.toplevel_page_shipping-invoice-settings .fak-logo-uploader {
+    grid-template-columns: 1fr;
+  }
+
+  body.toplevel_page_shipping-invoice-settings .fak-logo-preview-wrap {
+    min-height: 140px;
+  }
+}
+
+/* Unified Faktorak admin surface */
+:root {
+  --fak-admin-primary: #111827;
+  --fak-admin-primary-hover: #030712;
+  --fak-admin-bg: #f5f7fb;
+  --fak-admin-card: #ffffff;
+  --fak-admin-soft: #f8fafc;
+  --fak-admin-stroke: #e5e7eb;
+  --fak-admin-stroke-strong: #d1d5db;
+  --fak-admin-title: #111827;
+  --fak-admin-text: #1f2937;
+  --fak-admin-muted: #6b7280;
+  --fak-admin-shadow: 0 10px 28px rgba(17, 24, 39, 0.06);
+}
+
+body.toplevel_page_shipping-invoice-settings #wpcontent,
+body.shipping-invoice-settings_page_faktorak-manual-invoices #wpcontent,
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list #wpcontent {
+  background: var(--fak-admin-bg);
+}
+
+.faktorak-admin-page {
+  box-sizing: border-box;
+  width: auto;
+  max-width: 1320px;
+  margin: 20px auto 0;
+  padding: 0 18px 28px;
+  color: var(--fak-admin-text);
+}
+
+body.toplevel_page_shipping-invoice-settings .faktorak-settings-page {
+  max-width: 1320px;
+  width: auto;
+}
+
+.faktorak-admin-page *,
+.faktorak-admin-page *::before,
+.faktorak-admin-page *::after {
+  box-sizing: border-box;
+}
+
+.faktorak-admin-page .fak-page-title,
+.faktorak-admin-page .faktorak-manual-header h1 {
+  margin: 0;
+  color: var(--fak-admin-title);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.faktorak-admin-page .fak-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 18px;
+  padding: 8px;
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: var(--fak-admin-card);
+  box-shadow: var(--fak-admin-shadow);
+}
+
+.faktorak-admin-page .fak-tabs-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--fak-admin-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.faktorak-admin-page .fak-tabs-nav a:hover,
+.faktorak-admin-page .fak-tabs-nav a:focus {
+  border-color: var(--fak-admin-stroke);
+  background: var(--fak-admin-soft);
+  color: var(--fak-admin-title);
+  box-shadow: none;
+  outline: none;
+}
+
+.faktorak-admin-page .fak-tabs-nav a.active {
+  border-color: var(--fak-admin-primary);
+  background: var(--fak-admin-primary);
+  color: #fff;
+}
+
+.faktorak-admin-page .faktorak-manual-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 12px;
+  padding: 20px 22px;
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  box-shadow: var(--fak-admin-shadow);
+  text-align: right;
+}
+
+.faktorak-admin-page .faktorak-manual-header::before,
+.faktorak-admin-page .faktorak-manual-header::after {
+  display: none;
+}
+
+.faktorak-admin-page .faktorak-manual-header p {
+  margin: 0;
+  color: var(--fak-admin-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.faktorak-admin-page .fak-card,
+.faktorak-admin-page .faktorak-manual-card,
+.faktorak-admin-page .faktorak-products-card,
+.faktorak-admin-page .faktorak-list-filters,
+.faktorak-admin-page .faktorak-bulk-tools,
+.faktorak-admin-page .fak-filter-card,
+.faktorak-admin-page .fak-fields-card,
+.faktorak-admin-page .fak-actions-card,
+.faktorak-admin-page .fak-table-wrap {
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: var(--fak-admin-card);
+  box-shadow: var(--fak-admin-shadow);
+}
+
+.faktorak-admin-page .faktorak-manual-card,
+.faktorak-admin-page .fak-card {
+  padding: 18px;
+}
+
+.faktorak-admin-page .fak-card + .fak-card,
+.faktorak-admin-page .faktorak-manual-card + .faktorak-manual-card {
+  margin-top: 14px;
+}
+
+.faktorak-admin-page .faktorak-manual-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.faktorak-admin-page .faktorak-panel,
+.faktorak-admin-page .faktorak-manual-grid > div {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: var(--fak-admin-soft);
+}
+
+.faktorak-admin-page .faktorak-manual-grid h2,
+.faktorak-admin-page .faktorak-products-head h2,
+.faktorak-admin-page .fak-card-title,
+.faktorak-admin-page .fak-fields-head strong,
+.faktorak-admin-page .fak-actions-card strong,
+.faktorak-admin-page .faktorak-bulk-tools__summary strong {
+  margin: 0;
+  color: var(--fak-admin-title);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.faktorak-admin-page .faktorak-field,
+.faktorak-admin-page .fak-field,
+.faktorak-admin-page .fak-filter-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0 0 12px;
+  color: var(--fak-admin-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.faktorak-admin-page .faktorak-field span,
+.faktorak-admin-page .fak-field-label {
+  margin: 0;
+  color: var(--fak-admin-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.faktorak-admin-page input[type="text"],
+.faktorak-admin-page input[type="email"],
+.faktorak-admin-page input[type="url"],
+.faktorak-admin-page input[type="number"],
+.faktorak-admin-page textarea,
+.faktorak-admin-page select,
+.faktorak-admin-page .fak-input {
+  width: 100%;
+  min-height: 40px;
+  margin: 0;
+  border: 1px solid var(--fak-admin-stroke-strong);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--fak-admin-text);
+  box-shadow: none;
+}
+
+.faktorak-admin-page textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.faktorak-admin-page input:focus,
+.faktorak-admin-page textarea:focus,
+.faktorak-admin-page select:focus {
+  border-color: var(--fak-admin-primary);
+  box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.12);
+  outline: none;
+}
+
+.faktorak-admin-page .description,
+.faktorak-admin-page .fak-section-note,
+.faktorak-admin-page .fak-shortcode-desc,
+.faktorak-admin-page .fak-fields-head span,
+.faktorak-admin-page .fak-actions-card span,
+.faktorak-admin-page .faktorak-bulk-selected-count {
+  color: var(--fak-admin-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.faktorak-admin-page .button,
+.faktorak-admin-page .button.button-primary,
+.faktorak-admin-page .button.button-large,
+.faktorak-admin-page .button.button-small,
+.faktorak-admin-page .fak-black-btn,
+.faktorak-admin-page .fak-outline-btn,
+.faktorak-admin-page #upload_logo_button,
+.faktorak-admin-page #upload_signature_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px 14px;
+  border: 1px solid var(--fak-admin-primary) !important;
+  border-radius: 6px !important;
+  background: var(--fak-admin-primary) !important;
+  color: #fff !important;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  box-shadow: none !important;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.faktorak-admin-page .button:hover,
+.faktorak-admin-page .button:focus,
+.faktorak-admin-page .button.button-primary:hover,
+.faktorak-admin-page .button.button-primary:focus,
+.faktorak-admin-page .fak-black-btn:hover,
+.faktorak-admin-page .fak-black-btn:focus,
+.faktorak-admin-page .fak-outline-btn:hover,
+.faktorak-admin-page .fak-outline-btn:focus {
+  border-color: var(--fak-admin-primary-hover) !important;
+  background: var(--fak-admin-primary-hover) !important;
+  color: #fff !important;
+  outline: none;
+}
+
+.faktorak-admin-page .button:active {
+  transform: translateY(1px);
+}
+
+.faktorak-admin-page .button-link-delete {
+  color: #fff !important;
+}
+
+.faktorak-admin-page .faktorak-pay-btn,
+.faktorak-admin-page .faktorak-pay-copy-btn,
+.faktorak-admin-page .faktorak-open-links-modal {
+  border-color: var(--fak-admin-primary) !important;
+  background: var(--fak-admin-primary) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.faktorak-admin-page .faktorak-created-notice {
+  padding: 16px !important;
+  border: 1px solid #bbf7d0 !important;
+  border-radius: 8px !important;
+  background: #f0fdf4 !important;
+  box-shadow: none;
+}
+
+.faktorak-admin-page .faktorak-created-notice > p:first-child {
+  text-align: right;
+  color: #166534;
+  font-size: 15px;
+}
+
+.faktorak-admin-page .faktorak-created-notice > p:nth-of-type(2) {
+  justify-content: flex-start;
+}
+
+.faktorak-admin-page .faktorak-created-link-block,
+.faktorak-admin-page .faktorak-modal-link-row {
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.faktorak-admin-page .faktorak-created-link-block {
+  padding: 12px;
+}
+
+.faktorak-admin-page .faktorak-created-link-block .fak-input,
+.faktorak-admin-page .fak-input-payment {
+  border-color: var(--fak-admin-stroke-strong) !important;
+  background: #fff !important;
+}
+
+.faktorak-admin-page .faktorak-products-card {
+  padding: 14px;
+  background: var(--fak-admin-card);
+}
+
+.faktorak-admin-page .faktorak-products-head,
+.faktorak-admin-page .fak-fields-head,
+.faktorak-admin-page .fak-actions-card,
+.faktorak-admin-page .faktorak-bulk-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.faktorak-admin-page .faktorak-products-head {
+  margin-bottom: 12px;
+}
+
+.faktorak-admin-page .faktorak-products-table-wrap,
+.faktorak-admin-page .fak-table-wrap {
+  overflow: auto;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.faktorak-admin-page table.widefat {
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+}
+
+.faktorak-admin-page table.widefat th,
+.faktorak-admin-page table.widefat td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--fak-admin-stroke);
+  color: var(--fak-admin-text);
+  vertical-align: middle;
+}
+
+.faktorak-admin-page table.widefat thead th,
+.faktorak-admin-page table.widefat thead td {
+  background: #f3f4f6;
+  color: var(--fak-admin-title);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.faktorak-admin-page table.widefat tbody tr:hover {
+  background: #f9fafb;
+}
+
+.faktorak-admin-page .faktorak-list-filters,
+.faktorak-admin-page .fak-filter-card {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.5fr) minmax(160px, 1fr) minmax(
+      160px,
+      1fr
+    ) auto auto;
+  gap: 10px;
+  align-items: end;
+  margin: 0 0 14px;
+  padding: 14px;
+}
+
+.faktorak-admin-page .fak-filter-card {
+  grid-template-columns: repeat(4, minmax(160px, 1fr)) auto;
+}
+
+.faktorak-admin-page .fak-filter-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.faktorak-admin-page .faktorak-bulk-print-form,
+.faktorak-admin-page #faktorak-export-form,
+.faktorak-admin-page .fak-export-page {
+  display: grid;
+  gap: 14px;
+}
+
+.faktorak-admin-page .faktorak-bulk-tools {
+  margin: 0 !important;
+  padding: 14px;
+}
+
+.faktorak-admin-page .faktorak-bulk-tools__actions,
+.faktorak-admin-page .fak-export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 !important;
+}
+
+.faktorak-admin-page .faktorak-manual-actions {
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--fak-admin-stroke);
+}
+
+.faktorak-admin-page .fak-logo-uploader {
+  grid-template-columns: minmax(0, 1fr) 190px;
+}
+
+.faktorak-admin-page .fak-logo-preview-wrap {
+  border-radius: 8px;
+  background: var(--fak-admin-soft);
+}
+
+.faktorak-admin-page .fak-features-grid .fak-switch,
+.faktorak-admin-page .fak-shortcode-card,
+.faktorak-admin-page .fak-field-chip,
+.faktorak-admin-page .fak-choice-group label {
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: var(--fak-admin-soft);
+}
+
+.faktorak-admin-page .fak-switch input:checked + .track {
+  background: var(--fak-admin-primary);
+}
+
+.faktorak-admin-page .fak-switch input:focus-visible + .track {
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.16);
+}
+
+.faktorak-admin-page .fak-submit-wrap .button.button-primary {
+  width: 100%;
+}
+
+.faktorak-admin-page .fak-export-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 18px;
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  box-shadow: var(--fak-admin-shadow);
+}
+
+.faktorak-admin-page .fak-export-head h2 {
+  margin: 0 0 6px;
+  color: var(--fak-admin-title);
+  font-size: 20px;
+}
+
+.faktorak-admin-page .fak-export-head p {
+  margin: 0;
+  color: var(--fak-admin-muted);
+  line-height: 1.9;
+}
+
+.faktorak-admin-page .fak-export-badge {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #166534;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.faktorak-admin-page .fak-fields-card,
+.faktorak-admin-page .fak-actions-card,
+.faktorak-admin-page .fak-table-wrap {
+  padding: 14px;
+}
+
+.faktorak-admin-page .fak-field-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.faktorak-admin-page .fak-field-chip,
+.faktorak-admin-page .fak-choice-group label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.faktorak-admin-page .fak-choice-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.faktorak-admin-page .fak-modal-backdrop,
+.faktorak-links-modal {
+  background: rgba(17, 24, 39, 0.52);
+}
+
+.faktorak-admin-page .fak-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.faktorak-admin-page .fak-modal-backdrop[hidden] {
+  display: none !important;
+}
+
+.faktorak-admin-page .fak-modal,
+.faktorak-links-modal__dialog {
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(17, 24, 39, 0.22);
+}
+
+.faktorak-admin-page .fak-modal {
+  position: relative;
+  width: min(560px, 100%);
+  padding: 20px;
+}
+
+.faktorak-admin-page .fak-modal h3 {
+  margin: 0 0 8px;
+  color: var(--fak-admin-title);
+  font-size: 18px;
+}
+
+.faktorak-admin-page .fak-modal p {
+  margin: 0 0 14px;
+  color: var(--fak-admin-muted);
+  line-height: 1.8;
+}
+
+.faktorak-links-modal__dialog {
+  padding: 18px;
+}
+
+.faktorak-admin-page .fak-modal-close,
+.faktorak-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--fak-admin-primary);
+  border-radius: 6px;
+  background: var(--fak-admin-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+.faktorak-admin-page .fak-modal-close {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+
+.faktorak-admin-page .fak-modal-options {
+  display: grid;
+  gap: 10px;
+}
+
+.faktorak-admin-page .fak-modal-option {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 8px;
+  background: var(--fak-admin-soft);
+  color: var(--fak-admin-text);
+  text-align: right;
+  cursor: pointer;
+}
+
+.faktorak-admin-page .fak-modal-option:hover,
+.faktorak-admin-page .fak-modal-option:focus {
+  border-color: var(--fak-admin-primary);
+  background: #fff;
+  outline: none;
+}
+
+.faktorak-admin-page .faktorak-links-modal__actions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.faktorak-admin-page .faktorak-modal-link-row {
+  padding: 10px;
+}
+
+.faktorak-admin-page .faktorak-search-results {
+  border-color: var(--fak-admin-stroke);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.1);
+}
+
+.faktorak-admin-page .faktorak-search-item:hover {
+  background: #f3f4f6;
+}
+
+.faktorak-scope a.faktorak-btn,
+.faktorak-order-actions .button {
+  border-color: #111827 !important;
+  background: #111827 !important;
+  color: #fff !important;
+}
+
+.faktorak-scope a.faktorak-btn:hover,
+.faktorak-order-actions .button:hover,
+.faktorak-order-actions .button:focus {
+  border-color: #030712 !important;
+  background: #030712 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 1180px) {
+  .faktorak-admin-page .faktorak-list-filters,
+  .faktorak-admin-page .fak-filter-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faktorak-admin-page .fak-field-grid {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .faktorak-admin-page {
+    margin-top: 12px;
+    padding: 0 10px 24px;
+  }
+
+  .faktorak-admin-page .faktorak-manual-grid,
+  .faktorak-admin-page .fak-page-grid,
+  .faktorak-admin-page .fak-settings-grid,
+  .faktorak-admin-page .fak-features-grid,
+  .faktorak-admin-page .fak-shortcodes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-admin-page .fak-logo-uploader,
+  .faktorak-admin-page .faktorak-two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-admin-page .faktorak-products-table {
+    min-width: 820px;
+  }
+}
+
+@media (max-width: 760px) {
+  .faktorak-admin-page .fak-page-title,
+  .faktorak-admin-page .faktorak-manual-header h1 {
+    font-size: 22px;
+  }
+
+  .faktorak-admin-page .fak-tabs-nav,
+  .faktorak-admin-page .faktorak-list-filters,
+  .faktorak-admin-page .fak-filter-card,
+  .faktorak-admin-page .fak-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-admin-page .fak-tabs-nav {
+    display: grid;
+  }
+
+  .faktorak-admin-page .button,
+  .faktorak-admin-page .fak-filter-actions,
+  .faktorak-admin-page .fak-filter-actions .button,
+  .faktorak-admin-page .faktorak-bulk-tools__actions,
+  .faktorak-admin-page .faktorak-bulk-tools__actions .button,
+  .faktorak-admin-page .fak-export-actions,
+  .faktorak-admin-page .fak-export-actions .button {
+    width: 100%;
+  }
+}
+
+/* Modern polish pass: lighter density, larger radius, cleaner settings controls. */
+:root {
+  --fak-admin-radius: 18px;
+  --fak-admin-radius-sm: 15px;
+  --fak-admin-accent: #2563eb;
+  --fak-admin-accent-hover: #1d4ed8;
+  --fak-admin-accent-soft: #eff6ff;
+  --fak-admin-accent-stroke: #bfdbfe;
+  --fak-admin-bg: #f6f7f9;
+  --fak-admin-soft: #fafafa;
+  --fak-admin-shadow: 0 8px 22px rgba(17, 24, 39, 0.045);
+}
+
+.faktorak-admin-page {
+  padding-inline: 16px;
+  font-weight: 400;
+}
+
+.faktorak-admin-page *,
+.faktorak-admin-page *::before,
+.faktorak-admin-page *::after {
+  font-weight: 400;
+}
+
+.faktorak-admin-page .faktorak-manual-header,
+.faktorak-admin-page .fak-tabs-nav,
+.faktorak-admin-page .fak-card,
+.faktorak-admin-page .faktorak-manual-card,
+.faktorak-admin-page .faktorak-products-card,
+.faktorak-admin-page .faktorak-list-filters,
+.faktorak-admin-page .faktorak-bulk-tools,
+.faktorak-admin-page .fak-filter-card,
+.faktorak-admin-page .fak-fields-card,
+.faktorak-admin-page .fak-actions-card,
+.faktorak-admin-page .fak-table-wrap,
+.faktorak-admin-page .fak-export-head {
+  border-radius: var(--fak-admin-radius) !important;
+}
+
+.faktorak-admin-page .faktorak-panel,
+.faktorak-admin-page .faktorak-manual-grid > div,
+.faktorak-admin-page .fak-features-grid .fak-switch,
+.faktorak-admin-page .fak-shortcode-card,
+.faktorak-admin-page .fak-field-chip,
+.faktorak-admin-page .fak-choice-group label,
+.faktorak-admin-page input[type="text"],
+.faktorak-admin-page input[type="email"],
+.faktorak-admin-page input[type="url"],
+.faktorak-admin-page input[type="number"],
+.faktorak-admin-page textarea,
+.faktorak-admin-page select,
+.faktorak-admin-page .fak-input,
+.faktorak-admin-page .button,
+.faktorak-admin-page .fak-black-btn,
+.faktorak-admin-page .fak-outline-btn,
+.faktorak-admin-page #upload_logo_button,
+.faktorak-admin-page #upload_signature_button {
+  border-radius: var(--fak-admin-radius-sm) !important;
+}
+
+.faktorak-admin-page .fak-card,
+.faktorak-admin-page .faktorak-manual-card,
+.faktorak-admin-page .fak-fields-card,
+.faktorak-admin-page .fak-actions-card,
+.faktorak-admin-page .faktorak-bulk-tools,
+.faktorak-admin-page .fak-filter-card {
+  padding: 16px;
+}
+
+.faktorak-admin-page .fak-page-grid {
+  gap: 14px;
+}
+
+.faktorak-admin-page .fak-main-col,
+.faktorak-admin-page .fak-side-col,
+.faktorak-admin-page .fak-export-page,
+.faktorak-admin-page #faktorak-export-form {
+  gap: 12px;
+}
+
+.faktorak-admin-page .fak-card-title,
+.faktorak-admin-page .faktorak-manual-grid h2,
+.faktorak-admin-page .faktorak-products-head h2,
+.faktorak-admin-page .fak-fields-head strong,
+.faktorak-admin-page .fak-actions-card strong,
+.faktorak-admin-page .faktorak-bulk-tools__summary strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.faktorak-admin-page .fak-features-grid {
+  grid-template-columns: 1fr !important;
+  gap: 10px;
+}
+
+.faktorak-admin-page .fak-features-grid .fak-switch {
+  display: flex !important;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 86px;
+  padding: 12px 14px;
+}
+
+.faktorak-admin-page .fak-switch .label {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  color: var(--fak-admin-text);
+  font-size: 12.5px !important;
+  font-weight: 400 !important;
+  line-height: 1.85 !important;
+  text-align: right;
+  white-space: normal;
+}
+
+.faktorak-admin-page .fak-switch .track {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 28px;
+}
+
+.faktorak-admin-page .fak-switch .thumb {
+  width: 22px;
+  height: 22px;
+}
+
+body.toplevel_page_shipping-invoice-settings
+  .faktorak-admin-page
+  .fak-switch
+  input:checked
+  + .track
+  .thumb {
+  left: 25px;
+}
+
+.faktorak-admin-page .fak-filter-card {
+  grid-template-columns: repeat(4, minmax(150px, 1fr)) auto;
+  align-items: end;
+}
+
+.faktorak-admin-page .fak-filter-card label {
+  margin: 0;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.faktorak-admin-page .fak-filter-card input,
+.faktorak-admin-page .fak-filter-card select,
+.faktorak-admin-page .fak-filter-actions .button {
+  min-height: 40px;
+}
+
+.faktorak-admin-page .fak-filter-actions {
+  align-self: end;
+  align-items: end;
+  gap: 8px;
+  min-height: 40px;
+}
+
+.faktorak-admin-page .fak-filter-actions .button {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.faktorak-admin-page .fak-fields-head {
+  align-items: center;
+}
+
+.faktorak-admin-page .fak-fields-head strong {
+  white-space: nowrap;
+}
+
+.faktorak-admin-page .fak-page-title,
+.faktorak-admin-page .faktorak-manual-header h1,
+.faktorak-admin-page .fak-export-head h2 {
+  font-weight: 600;
+}
+
+.faktorak-admin-page .fak-tabs-nav a.active {
+  box-shadow: inset 0 -3px 0 var(--fak-admin-accent);
+}
+
+.faktorak-admin-page input:focus,
+.faktorak-admin-page textarea:focus,
+.faktorak-admin-page select:focus {
+  border-color: var(--fak-admin-accent);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+.faktorak-admin-page .fak-switch input:checked + .track {
+  background: var(--fak-admin-accent);
+}
+
+.faktorak-admin-page .fak-switch input:focus-visible + .track {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.faktorak-admin-page .fak-outline-btn,
+.faktorak-admin-page .fak-copy-btn,
+.faktorak-admin-page .faktorak-pay-copy-btn,
+.faktorak-admin-page .faktorak-open-links-modal,
+.faktorak-admin-page
+  .faktorak-bulk-tools__actions
+  .button:not(.button-primary) {
+  border-color: var(--fak-admin-accent-stroke) !important;
+  background: var(--fak-admin-accent-soft) !important;
+  color: var(--fak-admin-accent-hover) !important;
+}
+
+.faktorak-admin-page .fak-outline-btn:hover,
+.faktorak-admin-page .fak-outline-btn:focus,
+.faktorak-admin-page .fak-copy-btn:hover,
+.faktorak-admin-page .fak-copy-btn:focus,
+.faktorak-admin-page .faktorak-pay-copy-btn:hover,
+.faktorak-admin-page .faktorak-pay-copy-btn:focus,
+.faktorak-admin-page .faktorak-open-links-modal:hover,
+.faktorak-admin-page .faktorak-open-links-modal:focus,
+.faktorak-admin-page
+  .faktorak-bulk-tools__actions
+  .button:not(.button-primary):hover,
+.faktorak-admin-page
+  .faktorak-bulk-tools__actions
+  .button:not(.button-primary):focus {
+  border-color: var(--fak-admin-accent) !important;
+  background: var(--fak-admin-accent) !important;
+  color: #fff !important;
+}
+
+.faktorak-admin-page .faktorak-pay-btn {
+  border-color: var(--fak-admin-accent) !important;
+  background: var(--fak-admin-accent) !important;
+  color: #fff !important;
+}
+
+.faktorak-admin-page .faktorak-pay-btn:hover,
+.faktorak-admin-page .faktorak-pay-btn:focus {
+  border-color: var(--fak-admin-accent-hover) !important;
+  background: var(--fak-admin-accent-hover) !important;
+}
+
+.faktorak-admin-page .fak-export-badge {
+  background: var(--fak-admin-accent-soft);
+  color: var(--fak-admin-accent-hover);
+}
+
+.faktorak-admin-page .fak-modal-option:hover,
+.faktorak-admin-page .fak-modal-option:focus {
+  border-color: var(--fak-admin-accent);
+}
+
+.faktorak-admin-page .fak-filter-card label,
+.faktorak-admin-page .faktorak-field span,
+.faktorak-admin-page .fak-field-label,
+.faktorak-admin-page table.widefat thead th,
+.faktorak-admin-page table.widefat thead td,
+.faktorak-admin-page .fak-tabs-nav a,
+.faktorak-admin-page .button {
+  font-weight: 400 !important;
+}
+
+@media (max-width: 1180px) {
+  .faktorak-admin-page .fak-filter-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faktorak-admin-page .fak-filter-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 782px) {
+  .faktorak-admin-page {
+    padding-inline: 10px;
+  }
+
+  .faktorak-admin-page .fak-filter-card,
+  .faktorak-admin-page .fak-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-admin-page .fak-features-grid .fak-switch {
+    min-height: auto;
+  }
+}

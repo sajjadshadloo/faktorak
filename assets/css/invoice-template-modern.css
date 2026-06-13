@@ -1,0 +1,315 @@
+.faktorak-invoice {
+  --fak-primary: #2563eb;
+  --fak-border: #e5e7eb;
+  --fak-text: #111827;
+  --fak-muted: #6b7280;
+  --fak-bg: #ffffff;
+  --fak-soft: #f9fafb;
+  font-family: "iranyekan", sans-serif;
+  color: var(--fak-text);
+  background: var(--fak-bg);
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 24px;
+  border: 1px solid var(--fak-border);
+  border-radius: 14px;
+}
+.fak-header {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+  align-items: center;
+  border-bottom: 1px solid var(--fak-border);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.fak-brand {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+/* لوگو: نمایش درست برای همه‌ی نسبت‌ها و شکل‌ها */
+.fak-logo {
+  width: 72px;
+  height: 72px;
+  /* داخل یک کادر ثابت، بدون بُرش */
+  object-fit: contain; /* قبلاً cover بود و لوگو رو می‌برید */
+  background: #fff;
+  border: 1px solid var(--fak-border);
+  border-radius: 12px; /* گوشه‌های نرمِ کادر */
+  padding: 6px; /* نفس برای لوگوهای کشیده/طویل */
+  display: block; /* جلوگیری از فاصله‌های ناخواسته */
+}
+.fak-store h1 {
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+.fak-store .meta {
+  font-size: 12px;
+  color: var(--fak-muted);
+  line-height: 1.8;
+}
+.fak-invoice-id {
+  text-align: left;
+}
+.fak-invoice-id .badge {
+  display: inline-block;
+  background: var(--fak-soft);
+  border: 1px dashed var(--fak-border);
+  color: var(--fak-muted);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.fak-invoice-id h2 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+.fak-invoice-id .meta {
+  font-size: 12px;
+  color: var(--fak-muted);
+}
+.fak-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.fak-card {
+  border: 1px solid var(--fak-border);
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff;
+}
+.fak-card h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--fak-muted);
+}
+.fak-card .row {
+  font-size: 13px;
+  line-height: 1.9;
+}
+.fak-summary {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.fak-note {
+  border: 1px solid var(--fak-border);
+  border-radius: 12px;
+  background: var(--fak-soft);
+  padding: 14px;
+  font-size: 13px;
+  color: #374151;
+}
+.fak-stamp {
+  border: 1px dashed var(--fak-border);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+}
+.fak-stamp img {
+  max-width: 120px;
+  max-height: 65px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 6px;
+}
+.fak-stamp .cap {
+  font-size: 12px;
+  color: var(--fak-muted);
+}
+table.fak-items {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--fak-border);
+  border-radius: 12px;
+  background: #fff;
+}
+.fak-items-wrap {
+  width: 100%;
+}
+.fak-items thead th {
+  background: var(--fak-soft);
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--fak-border);
+}
+.fak-items tbody td {
+  font-size: 13px;
+  padding: 12px;
+  border-bottom: 1px solid var(--fak-border);
+  text-align: center;
+  vertical-align: top;
+}
+.fak-items tbody tr:last-child td {
+  border-bottom: none;
+}
+.fak-items .text-right {
+  text-align: right;
+}
+.fak-total {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: start;
+}
+.fak-total .spacer {
+  height: 1px;
+}
+.fak-total .box {
+  border: 1px solid var(--fak-border);
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.fak-total .box .row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--fak-border);
+}
+.fak-total .box .row:last-child {
+  border-bottom: none;
+}
+.fak-total .box .row.total {
+  background: var(--fak-soft);
+  font-weight: 700;
+}
+.fak-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: center;
+}
+.fak-qr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px dashed var(--fak-border);
+  border-radius: 12px;
+  padding: 12px;
+}
+.fak-qr .faktorak-qr img,
+.fak-qr .faktorak-qr canvas {
+  width: 92px;
+  height: 92px;
+  border-radius: 8px;
+  background: #fff;
+  display: block;
+}
+.fak-qr .meta {
+  font-size: 12px;
+  color: var(--fak-muted);
+}
+.fak-thanks {
+  text-align: left;
+  color: var(--fak-muted);
+  font-size: 12px;
+}
+.fak-brand-hr {
+  height: 4px;
+  background: linear-gradient(90deg, var(--fak-primary), #60a5fa);
+  border-radius: 999px;
+  margin: 8px 0 16px 0;
+}
+.fak-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+.fak-btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--fak-primary);
+  color: #fff;
+  font-size: 13px;
+  border: 0;
+  cursor: pointer;
+}
+.fak-btn.outline {
+  background: #fff;
+  color: var(--fak-primary);
+  border: 1px solid var(--fak-primary);
+}
+@media screen and (max-width: 900px) {
+  .faktorak-invoice {
+    margin: 12px auto;
+    padding: 14px;
+    border-radius: 10px;
+  }
+  .fak-header {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+  .fak-invoice-id {
+    text-align: right;
+  }
+  .fak-cards {
+    grid-template-columns: 1fr;
+  }
+  .fak-summary {
+    grid-template-columns: 1fr;
+  }
+  .fak-total {
+    grid-template-columns: 1fr;
+  }
+  .fak-footer {
+    grid-template-columns: 1fr;
+  }
+  .fak-thanks {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 768px) {
+  .fak-actions {
+    flex-wrap: wrap;
+  }
+  .fak-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .fak-items-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .fak-items {
+    min-width: 720px;
+  }
+  .fak-qr {
+    align-items: flex-start;
+  }
+}
+@media print {
+  .fak-actions {
+    display: none !important;
+  }
+  .faktorak-invoice {
+    box-shadow: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+}

@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.8;
+  font-family: "iranyekan", sans-serif !important;
+}
+
+.container {
+  width: 95%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid transparent;
+}
+
+/* هدر سه‌ستونه */
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0 16px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+}
+.shop-meta {
+  text-align: right;
+  line-height: 1.9;
+}
+.shop-meta .line {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.shop-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.muted {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* لوگو کاملاً منعطف برای هر نسبت تصویر */
+.logo-box {
+  width: 120px;
+  height: 90px; /* نسبت منطقی برای اغلب لوگوها */
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  overflow: hidden; /* جلوگیری از بیرون‌زدگی */
+}
+.logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* بدون کشیدگی */
+  display: block;
+}
+
+.order-meta {
+  text-align: left;
+  line-height: 1.9;
+}
+.order-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+.badge {
+  display: inline-block;
+  background: #f3f4f6;
+  border: 1px dashed #e5e7eb;
+  color: #6b7280;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.invoice-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 10px 0 20px;
+}
+
+table.shop-info {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+}
+table.shop-info td {
+  width: 33.3333%;
+  vertical-align: middle;
+  padding: 10px;
+  text-align: center;
+}
+.shop-info tfoot td {
+  background: e5e5e5;
+}
+.address-postcode-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.customer-info {
+  border: 1px solid #000;
+  padding: 15px;
+  background: rgba(72, 72, 72, 0.25);
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.component .title {
+  font-weight: 700;
+  margin: 0 5px;
+}
+.component .content {
+  margin-left: 5px;
+}
+
+table.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  text-align: center;
+}
+table.products-table th {
+  background: rgba(72, 72, 72, 0.25);
+  padding: 10px;
+  border: 1px solid #000;
+}
+table.products-table td {
+  border: 1px solid #000;
+  padding: 10px;
+  vertical-align: middle;
+}
+.products-table-wrap {
+  width: 100%;
+}
+
+.total-table {
+  width: 50%;
+  margin-right: auto;
+  margin-left: 0;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.total-table th,
+.total-table td {
+  border: 1px solid #000;
+  padding: 10px;
+}
+.rtl .total-table {
+  margin-right: 0;
+  margin-left: auto;
+}
+th.total,
+th.shipping,
+th.final {
+  background: #d1d1d1;
+}
+
+.faktorak-invoice-notes {
+  border: 1px solid #000;
+  background: #f9fafb;
+  padding: 10px 12px;
+  margin: 0 0 16px;
+  line-height: 1.9;
+}
+.faktorak-invoice-notes p {
+  margin: 0;
+}
+.faktorak-invoice-notes p + p {
+  margin-top: 8px;
+}
+
+.signature-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 20px 20px 0 50px;
+  gap: 8px;
+}
+.signature-label {
+  margin-left: 10px;
+}
+.signature-container img {
+  max-width: 120px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.print-buttons {
+  text-align: center;
+}
+.button {
+  background: #ff6347;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 6px;
+  padding: 7px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 0;
+}
+
+/* ریسپانسیوِ نمایش */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px;
+  }
+  .header-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+  }
+  .shop-meta,
+  .order-meta {
+    text-align: center;
+  }
+  .logo-box {
+    margin: 0 auto;
+  }
+  table.shop-info td {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+  .address-postcode-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .customer-info {
+    flex-direction: column;
+  }
+  .products-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .products-table {
+    min-width: 700px;
+    margin-bottom: 0;
+  }
+  .products-table th,
+  .products-table td {
+    white-space: nowrap;
+  }
+  .total-table {
+    width: 100%;
+  }
+  .signature-container {
+    justify-content: center;
+    margin: 14px 0 0;
+    flex-wrap: wrap;
+  }
+  .signature-label {
+    margin-left: 0;
+  }
+}
+
+/* چاپ */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .print-buttons {
+    display: none !important;
+  }
+  .container {
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+  }
+}

@@ -1,0 +1,1117 @@
+:root {
+  --fak-admin-bg-1: #f4f8ff;
+  --fak-admin-bg-2: #eef5ff;
+  --fak-admin-card: #ffffff;
+  --fak-admin-stroke: #d9e3f1;
+  --fak-admin-soft: #f6f9ff;
+  --fak-admin-title: #10233f;
+  --fak-admin-text: #223348;
+  --fak-admin-muted: #607086;
+  --fak-admin-primary: #1f6fb2;
+  --fak-admin-primary-2: #0f5f9d;
+  --fak-admin-shadow: none;
+}
+
+.faktorak-manual-wrap {
+  max-width: 1260px;
+  margin: 18px auto 0;
+  padding: 8px;
+  color: var(--fak-admin-text);
+}
+
+.faktorak-manual-wrap .notice {
+  border-radius: 14px;
+  border: 1px solid var(--fak-admin-stroke);
+  box-shadow: none;
+}
+
+.faktorak-created-notice {
+  margin: 0 0 16px !important;
+  padding: 14px 16px !important;
+  border-radius: 16px !important;
+  border-color: #c9d8eb !important;
+  background: linear-gradient(180deg, #f8fbff, #f3f8ff);
+}
+
+.faktorak-created-notice > p {
+  margin: 0 0 10px;
+}
+
+.faktorak-created-notice > p:first-child {
+  text-align: center;
+  color: var(--fak-admin-title);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.faktorak-created-notice > p:nth-of-type(2) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.faktorak-created-notice > p:nth-of-type(2) .button {
+  min-width: 128px;
+  text-align: center;
+}
+
+.faktorak-created-link-block {
+  max-width: 100% !important;
+  margin: 10px 0 0 !important;
+  padding: 10px;
+  border: 1px solid #d5e1ef;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.faktorak-created-link-label {
+  display: block !important;
+  margin-bottom: 8px !important;
+  color: #3a4d66;
+  font-weight: 600;
+}
+
+.faktorak-created-link-block .fak-input {
+  width: 100%;
+  margin-top: 0 !important;
+  direction: ltr;
+  text-align: left;
+  background: #f7fbff;
+  border: 1px solid #c9d8eb;
+  border-radius: 10px;
+  min-height: 40px;
+}
+
+.faktorak-created-link-block .fak-copy-btn {
+  margin-top: 8px !important;
+  min-width: 110px;
+}
+
+.fak-copy-btn-top {
+  margin-top: 8px !important;
+}
+
+.fak-input-compact {
+  margin-top: 8px !important;
+}
+
+.fak-input-payment {
+  border-color: #93c5fd !important;
+  background: linear-gradient(180deg, #f8fbff, #f1f7ff) !important;
+}
+
+.faktorak-pay-btn {
+  border: 1px solid #1d4ed8 !important;
+  background: linear-gradient(180deg, #3b82f6, #2563eb) !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.faktorak-pay-btn:hover,
+.faktorak-pay-btn:focus {
+  background: linear-gradient(180deg, #4d8ffa, #2f6ef0) !important;
+  border-color: #1e40af !important;
+  color: #fff !important;
+}
+
+.button.button-small.faktorak-pay-btn {
+  min-width: 72px;
+}
+
+.faktorak-pay-copy-btn {
+  border-color: #bfdbfe !important;
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  font-weight: 600 !important;
+}
+
+.faktorak-pay-copy-btn:hover,
+.faktorak-pay-copy-btn:focus {
+  border-color: #93c5fd !important;
+  background: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+.faktorak-manual-header {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 16px;
+  padding: 20px 22px;
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    var(--fak-admin-bg-1),
+    var(--fak-admin-bg-2)
+  );
+  box-shadow: none;
+  text-align: center;
+}
+
+.faktorak-manual-header::before {
+  content: "";
+  position: absolute;
+  inset: -60px auto auto -30px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(31, 111, 178, 0.16),
+    rgba(31, 111, 178, 0)
+  );
+  pointer-events: none;
+}
+
+.faktorak-manual-header::after {
+  content: "";
+  position: absolute;
+  inset: auto -40px -70px auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(16, 35, 63, 0.14),
+    rgba(16, 35, 63, 0)
+  );
+  pointer-events: none;
+}
+
+.faktorak-manual-header h1 {
+  position: relative;
+  margin: 0 0 6px;
+  color: var(--fak-admin-title);
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.faktorak-manual-header p {
+  position: relative;
+  margin: 0;
+  color: var(--fak-admin-muted);
+  font-size: 14px;
+}
+
+.faktorak-manual-card {
+  background: var(--fak-admin-card);
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: none;
+}
+
+.faktorak-manual-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.faktorak-manual-grid > div {
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 14px;
+  background: var(--fak-admin-soft);
+  padding: 16px;
+}
+
+.faktorak-manual-grid h2 {
+  margin: 0 0 12px;
+  color: var(--fak-admin-title);
+  font-size: 17px;
+}
+
+.faktorak-manual-grid .description {
+  margin: 8px 0 0;
+  color: var(--fak-admin-muted);
+}
+
+.faktorak-two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.faktorak-field {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.faktorak-field span {
+  display: block;
+  margin-bottom: 6px;
+  color: #3b4a5f;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.faktorak-field input,
+.faktorak-field select,
+.faktorak-field textarea {
+  width: 100%;
+  margin: 0;
+  min-height: 40px;
+  border: 1px solid #c9d8eb;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.faktorak-field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.faktorak-field input:focus,
+.faktorak-field select:focus,
+.faktorak-field textarea:focus,
+.faktorak-list-filters input:focus,
+.faktorak-list-filters select:focus {
+  border-color: #c9d8eb;
+  box-shadow: none;
+  outline: none;
+}
+
+.faktorak-products-card {
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 16px;
+  padding: 14px;
+  background: linear-gradient(180deg, #f8fbff, #f2f7ff);
+}
+
+.faktorak-products-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.faktorak-products-head h2 {
+  margin: 0;
+  color: var(--fak-admin-title);
+  font-size: 16px;
+}
+
+.faktorak-products-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.faktorak-products-table {
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.faktorak-products-table thead th {
+  background: #ecf3ff;
+  border-bottom: 1px solid var(--fak-admin-stroke);
+  color: #26384f;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 10px 8px;
+}
+
+.faktorak-products-table td {
+  vertical-align: top;
+  padding: 8px;
+}
+
+.faktorak-products-table th:nth-child(1) {
+  width: 25%;
+}
+
+.faktorak-products-table th:nth-child(2) {
+  width: 18%;
+}
+
+.faktorak-products-table th:nth-child(3) {
+  width: 13%;
+}
+
+.faktorak-products-table th:nth-child(4) {
+  width: 17%;
+}
+
+.faktorak-products-table th:nth-child(5) {
+  width: 15%;
+}
+
+.faktorak-products-table th:nth-child(6) {
+  width: 12%;
+}
+
+.faktorak-products-table .faktorak-product-search,
+.faktorak-products-table .faktorak-product-name,
+.faktorak-products-table .faktorak-product-sku,
+.faktorak-products-table .faktorak-product-price {
+  width: 100%;
+  min-height: 38px;
+  margin: 0;
+}
+
+.faktorak-products-table .faktorak-product-search {
+  text-align: right;
+}
+
+.faktorak-products-table .faktorak-product-sku,
+.faktorak-products-table .faktorak-product-name {
+  text-align: center;
+}
+
+.faktorak-products-table .faktorak-product-price {
+  text-align: center;
+  direction: ltr;
+}
+
+.faktorak-qty-control {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  direction: ltr;
+  gap: 3px;
+  width: 100%;
+  min-width: 138px;
+  margin: 0 auto;
+}
+
+.faktorak-qty-control .faktorak-qty-input {
+  width: 56px;
+  min-width: 56px;
+  min-height: 32px;
+  text-align: center;
+  margin: 0;
+  padding: 0 4px;
+  border-radius: 6px;
+}
+
+.faktorak-qty-control .faktorak-qty-btn {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-height: 30px;
+  padding: 0;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b7c7dc;
+  background: #f5f9ff;
+  color: #2a3d55;
+}
+
+.faktorak-qty-control .faktorak-qty-btn:focus,
+.faktorak-qty-control .faktorak-qty-btn:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.faktorak-qty-control .faktorak-qty-btn:hover {
+  background: #e9f1ff;
+  border-color: #a8bcd7;
+}
+
+.faktorak-products-table input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.faktorak-products-table input[type="number"]::-webkit-outer-spin-button,
+.faktorak-products-table input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.faktorak-products-table td:last-child {
+  text-align: center;
+}
+
+.faktorak-products-table .faktorak-search-results {
+  margin-top: 6px;
+}
+
+.faktorak-manual-wrap .button,
+.faktorak-manual-wrap .button.button-large,
+.faktorak-manual-wrap .button.button-small {
+  border-radius: 11px;
+  border-color: #b6c9e2;
+  min-height: 36px;
+}
+
+.faktorak-manual-wrap .button-primary {
+  background: linear-gradient(
+    180deg,
+    var(--fak-admin-primary),
+    var(--fak-admin-primary-2)
+  );
+  border-color: var(--fak-admin-primary-2);
+  color: #fff;
+}
+
+.faktorak-manual-wrap .button-primary:hover {
+  background: linear-gradient(180deg, #237bc4, #1268a8);
+  border-color: #1268a8;
+}
+
+.faktorak-manual-actions {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--fak-admin-stroke);
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.faktorak-search-results {
+  border: 1px solid #cad8ea;
+  border-radius: 10px;
+  background: #fff;
+  max-height: 230px;
+  overflow: auto;
+  box-shadow: none;
+}
+
+.faktorak-search-results.is-hidden {
+  display: none;
+}
+
+.faktorak-search-item {
+  padding: 9px 11px;
+  cursor: pointer;
+  border-bottom: 1px solid #eff4fb;
+}
+
+.faktorak-search-item:last-child {
+  border-bottom: none;
+}
+
+.faktorak-search-item:hover {
+  background: #edf5ff;
+}
+
+.faktorak-search-item .meta {
+  color: var(--fak-admin-muted);
+  font-size: 12px;
+  direction: rtl;
+  text-align: right;
+}
+
+.faktorak-list-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 14px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--fak-admin-stroke);
+  background: var(--fak-admin-soft);
+}
+
+.faktorak-list-filters input,
+.faktorak-list-filters select {
+  min-width: 180px;
+  border-radius: 10px;
+  border-color: #c9d8eb;
+  min-height: 38px;
+  box-shadow: none;
+}
+
+.faktorak-manual-card .widefat {
+  border: 1px solid var(--fak-admin-stroke);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faktorak-manual-card .widefat th {
+  background: #edf4ff;
+  color: #2a3d55;
+}
+
+.faktorak-manual-card .widefat td {
+  vertical-align: top;
+}
+
+.faktorak-order-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.faktorak-order-actions .button {
+  margin: 0;
+}
+
+.faktorak-list-table-nav {
+  max-width: 1200px;
+  padding: 8px 0;
+}
+
+@media (max-width: 980px) {
+  .faktorak-manual-wrap {
+    padding: 0;
+  }
+
+  .faktorak-manual-header {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  .faktorak-manual-header h1 {
+    font-size: 24px;
+  }
+
+  .faktorak-manual-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .faktorak-manual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-products-table {
+    min-width: 860px;
+  }
+
+  .faktorak-created-notice > p:nth-of-type(2) .button {
+    width: 100%;
+  }
+}
+
+/* Cleaner layout for invoice list page */
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-manual-wrap {
+  max-width: 1320px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-manual-header {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-manual-header::before,
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-manual-header::after {
+  display: none;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-manual-header
+  h1 {
+  font-size: 28px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-filters {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 1.7fr) minmax(170px, 1fr) minmax(170px, 1fr)
+    auto auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #dde7f4;
+  background: #fff;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-filters
+  input,
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-filters
+  select {
+  min-width: 0;
+  min-height: 40px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-filters
+  .button {
+  min-height: 40px;
+  border-radius: 10px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-bulk-print-form {
+  display: grid;
+  gap: 10px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-bulk-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #dde7f4;
+  background: #fff;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-bulk-tools__summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #334155;
+  font-size: 13px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-bulk-selected-count {
+  color: #64748b;
+  font-size: 12px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-bulk-tools__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-bulk-submit {
+  min-height: 38px;
+  border-radius: 10px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-manual-card {
+  padding: 12px;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-table {
+  table-layout: fixed;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-table
+  th,
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-table
+  td {
+  padding: 12px 10px;
+  font-size: 13px;
+  text-align: center;
+  vertical-align: top;
+  border-bottom-color: #edf3fb;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-table
+  tbody
+  tr:nth-child(even) {
+  background: #fbfdff;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-list-table
+  .faktorak-col-customer {
+  word-break: break-word;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-col-check {
+  width: 56px;
+  min-width: 56px;
+  text-align: center;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-col-check
+  input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-col-actions {
+  min-width: 220px;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-open-links-modal {
+  min-height: 34px;
+  min-width: 108px;
+  border-radius: 9px;
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-open-links-modal:hover,
+body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+  .faktorak-open-links-modal:focus {
+  background: #dbeafe;
+  border-color: #60a5fa;
+  color: #1e40af;
+}
+
+body.faktorak-modal-open {
+  overflow: hidden;
+}
+
+.faktorak-links-modal[hidden] {
+  display: none !important;
+}
+
+.faktorak-links-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.faktorak-links-modal__dialog {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+  border: 1px solid #d9e4f2;
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.2);
+}
+
+.faktorak-links-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.faktorak-links-modal__head h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 18px;
+}
+
+.faktorak-modal-close {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d7e2f1;
+  border-radius: 10px;
+  background: #f8fbff;
+  color: #475569;
+  line-height: 1;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.faktorak-modal-close:hover,
+.faktorak-modal-close:focus {
+  background: #eef4ff;
+}
+
+.faktorak-links-modal__actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.faktorak-links-modal__actions .button {
+  width: 100%;
+  min-height: 36px;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.faktorak-links-modal__links {
+  display: grid;
+  gap: 10px;
+}
+
+.faktorak-modal-link-row {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.faktorak-modal-link-row label {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.faktorak-modal-link-row .fak-input {
+  margin-top: 0 !important;
+  min-height: 38px;
+}
+
+.faktorak-modal-link-row .button {
+  min-height: 36px;
+  margin: 0;
+  border-radius: 10px;
+}
+
+@media (max-width: 1220px) {
+  body.shipping-invoice-settings_page_faktorak-manual-invoices-list
+    .faktorak-list-filters {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 980px), (hover: none) and (pointer: coarse) {
+  body.faktorak-force-mobile-list .faktorak-manual-wrap,
+  body.mobile .faktorak-manual-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0 0;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-filters .button {
+    width: 100%;
+  }
+
+  .faktorak-manual-wrap .faktorak-bulk-tools {
+    padding: 8px;
+  }
+
+  .faktorak-manual-wrap .faktorak-bulk-tools__summary {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .faktorak-manual-wrap .faktorak-bulk-tools__actions {
+    width: 100%;
+  }
+
+  .faktorak-manual-wrap .faktorak-bulk-submit {
+    flex: 1 1 0;
+  }
+
+  .faktorak-manual-wrap .faktorak-manual-card {
+    overflow: visible;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table,
+  .faktorak-manual-wrap .faktorak-list-table thead,
+  .faktorak-manual-wrap .faktorak-list-table tbody,
+  .faktorak-manual-wrap .faktorak-list-table tr,
+  .faktorak-manual-wrap .faktorak-list-table td {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table {
+    min-width: 0;
+    table-layout: auto;
+    border: 0;
+    background: transparent;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table thead {
+    display: none !important;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table tbody tr {
+    margin-bottom: 10px;
+    border: 1px solid #d9e4f2;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table td {
+    padding: 9px 12px;
+    text-align: right;
+    border-bottom: 1px solid #edf3fb;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 3px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table td[colspan] {
+    text-align: center;
+    padding: 12px;
+  }
+
+  .faktorak-manual-wrap .faktorak-list-table td[colspan]::before {
+    display: none;
+  }
+
+  .faktorak-manual-wrap .faktorak-col-actions {
+    min-width: 0;
+  }
+
+  .faktorak-manual-wrap .faktorak-col-actions .button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .faktorak-manual-wrap .faktorak-col-check {
+    min-width: 0;
+    width: 100% !important;
+  }
+
+  .faktorak-manual-wrap .faktorak-col-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  body.faktorak-force-mobile-list
+    .faktorak-manual-wrap
+    .faktorak-list-table
+    tbody
+    tr,
+  body.mobile .faktorak-manual-wrap .faktorak-list-table tbody tr {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    box-sizing: border-box;
+  }
+
+  .faktorak-links-modal {
+    align-items: flex-start;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  .faktorak-links-modal__dialog {
+    width: 100%;
+    max-width: 760px;
+    max-height: none;
+    margin: 0 auto;
+  }
+
+  .faktorak-links-modal__actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .faktorak-modal-link-row {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-modal-link-row label {
+    margin-bottom: 2px;
+  }
+
+  .faktorak-modal-link-row .fak-input,
+  .faktorak-modal-link-row .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .faktorak-manual-wrap .faktorak-list-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-manual-wrap .faktorak-bulk-tools__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-links-modal {
+    padding: 8px;
+  }
+
+  .faktorak-links-modal__head h3 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .faktorak-links-modal__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .faktorak-links-modal__actions .button {
+    min-height: 40px;
+  }
+}
+
+/* Fallback for phones where admin viewport reports width > 980px */
+body.mobile .faktorak-manual-wrap .faktorak-list-table,
+body.mobile .faktorak-manual-wrap .faktorak-list-table thead,
+body.mobile .faktorak-manual-wrap .faktorak-list-table tbody,
+body.mobile .faktorak-manual-wrap .faktorak-list-table tr,
+body.mobile .faktorak-manual-wrap .faktorak-list-table td,
+body.faktorak-force-mobile-list .faktorak-manual-wrap .faktorak-list-table,
+body.faktorak-force-mobile-list
+  .faktorak-manual-wrap
+  .faktorak-list-table
+  thead,
+body.faktorak-force-mobile-list
+  .faktorak-manual-wrap
+  .faktorak-list-table
+  tbody,
+body.faktorak-force-mobile-list .faktorak-manual-wrap .faktorak-list-table tr,
+body.faktorak-force-mobile-list .faktorak-manual-wrap .faktorak-list-table td {
+  display: block !important;
+  width: 100% !important;
+}
+
+body.mobile .faktorak-manual-wrap .faktorak-list-table thead,
+body.faktorak-force-mobile-list
+  .faktorak-manual-wrap
+  .faktorak-list-table
+  thead {
+  display: none !important;
+}
+
+.faktorak-bulk-tools__actions {
+  margin: 15px 0 !important;
+}

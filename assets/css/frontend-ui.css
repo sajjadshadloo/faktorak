@@ -1,0 +1,136 @@
+﻿.faktorak-scope a.faktorak-btn {
+  width: 100% !important;
+  display: inline-block;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #1f6fb2;
+  color: #fff !important;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.faktorak-scope a.faktorak-btn:hover {
+  background: #185b90;
+  color: #fff !important;
+}
+
+.shipping-invoice-buttons.faktorak-scope:hover {
+  border-radius: 12px;
+}
+
+.faktorak-user-invoice-buttons {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faktorak-proforma-wrap {
+  margin-top: 15px;
+  text-align: right;
+}
+
+#fb-map.fb-map-canvas {
+  width: 100%;
+  height: 400px;
+}
+
+/* WooCommerce order-pay page (manual payment links) */
+body.woocommerce-order-pay .woocommerce {
+  max-width: 980px;
+  margin: 24px auto;
+}
+
+body.woocommerce-order-pay .woocommerce-order > h2,
+body.woocommerce-order-pay
+  .woocommerce-order
+  > .woocommerce-notices-wrapper
+  + h2 {
+  margin: 0 0 14px;
+  color: #0f172a;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+body.woocommerce-order-pay .woocommerce-error,
+body.woocommerce-order-pay .woocommerce-message,
+body.woocommerce-order-pay .woocommerce-info {
+  border: 1px solid #dbe7fb;
+  border-radius: 14px;
+  background: #f8fbff;
+  color: #1f3b6a;
+  box-shadow: none;
+}
+
+body.woocommerce-order-pay .woocommerce #order_review,
+body.woocommerce-order-pay .woocommerce form#order_review {
+  border: 1px solid #dbe7fb;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+
+body.woocommerce-order-pay .woocommerce table.shop_table {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+body.woocommerce-order-pay .woocommerce table.shop_table th,
+body.woocommerce-order-pay .woocommerce table.shop_table td {
+  border-color: #ecf2fb;
+  padding: 14px 16px;
+}
+
+body.woocommerce-order-pay #payment {
+  margin-top: 0;
+  border: 0;
+  border-top: 1px solid #ecf2fb;
+  border-radius: 0;
+  background: #f9fbff;
+}
+
+body.woocommerce-order-pay #payment div.payment_box {
+  border-radius: 12px;
+  background: #edf4ff;
+  color: #1e3a63;
+}
+
+body.woocommerce-order-pay #payment div.payment_box::before {
+  border-bottom-color: #edf4ff;
+}
+
+body.woocommerce-order-pay #payment #place_order,
+body.woocommerce-order-pay .woocommerce #payment #place_order {
+  float: none;
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid #1d4ed8;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+body.woocommerce-order-pay #payment #place_order:hover,
+body.woocommerce-order-pay #payment #place_order:focus {
+  background: linear-gradient(180deg, #4a8efb, #2f6ff2);
+  color: #fff;
+}
+
+.woocommerce-info.faktorak-proforma-checkout-cta span {
+  padding-right: 35px !important;
+}
+
+.woocommerce-info.faktorak-proforma-checkout-cta:before {
+  top: 17px !important;
+}
+
+.woocommerce-info.faktorak-proforma-checkout-cta {
+  padding: 10px !important;
+}
+.woocommerce-info.faktorak-proforma-checkout-cta::after {
+  display: none;
+}
